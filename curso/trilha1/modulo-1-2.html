@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+html
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo 1.2 - Slash Commands Nativos | 6 Pilares do Claude Code Resumido</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 1.2 - Native Slash Commands | 6 Pillars of the Claude Code Summarized</title>
+<script data-notranslate="True" src="https://cdn.tailwindcss.com"></script>
+<script data-notranslate="True">
     tailwind.config = {
       darkMode: 'class',
       theme: {
@@ -18,8 +18,8 @@
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-notranslate="True">
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     .topic-explanation { display: none; }
@@ -42,903 +42,779 @@
   </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">6P Resumido</span>
-          </a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10">
-            <span class="sm:hidden">T1</span>
-            <span class="hidden sm:inline">Atalhos</span>
-          </a>
-          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
-            <span class="sm:hidden">T2</span>
-            <span class="hidden sm:inline">Starter Pack</span>
-          </a>
-          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
-            <span class="sm:hidden">T3</span>
-            <span class="hidden sm:inline">Workflows</span>
-          </a>
-          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors">
-            <span class="sm:hidden">T4</span>
-            <span class="hidden sm:inline">Prompts</span>
-          </a>
-          <a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors">
-            <span class="sm:hidden">T5</span>
-            <span class="hidden sm:inline">Skills</span>
-          </a>
-          <a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors">
-            <span class="sm:hidden">T6</span>
-            <span class="hidden sm:inline">MCPs</span>
-          </a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- BREADCRUMB -->
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../../index.html" class="hover:text-emerald-400">Inicio</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a>
-      <span>/</span>
-      <span class="text-emerald-400">Modulo 1.2</span>
-    </div>
-  </nav>
-
-  <!-- HEADER -->
-  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">
-        MODULO 1.2
-      </span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">⚡ Slash Commands Nativos</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">
-        Os comandos de producao do Claude Code: commit inteligente, code review automatico, pull requests instantaneos, inicializacao de projetos e diagnostico do ambiente. Esses slash commands transformam tarefas manuais de minutos em operacoes de segundos.
-      </p>
-
-      <!-- Stats Banner -->
-      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-emerald-400">6</div>
-          <div class="text-xs text-neutral-400">Topicos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-emerald-400">25</div>
-          <div class="text-xs text-neutral-400">Minutos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-emerald-400">Basico</div>
-          <div class="text-xs text-neutral-400">Nivel</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-emerald-400">Pratico</div>
-          <div class="text-xs text-neutral-400">Tipo</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- CONTEUDO -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- TOPICO 1: /commit -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section id="topico-1" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">📝 /commit - Commit Inteligente com IA</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O comando <strong class="text-emerald-400">/commit</strong> analisa todas as mudancas no seu repositorio (staged e unstaged), entende o que foi alterado e gera automaticamente uma mensagem de commit descritiva. Nao e um resumo generico: o Claude le o diff real, entende o contexto das mudancas e escreve uma mensagem que descreve o <strong class="text-white">"por que"</strong> da mudanca, nao apenas o "o que".
-      </p>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Conceito Principal
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          O /commit nao e apenas um atalho para <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">git commit -m "..."</code>. Ele executa um pipeline completo: roda <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">git status</code>, analisa o <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">git diff</code>, verifica o historico recente de commits para manter consistencia de estilo, e gera uma mensagem que segue as convencoes do repositorio.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Analise de diff real:</strong> O Claude le cada linha alterada, entende a intencao da mudanca e gera uma mensagem que captura o proposito, nao apenas lista arquivos</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Convencoes automaticas:</strong> Se o repositorio ja usa Conventional Commits (feat:, fix:, refactor:), o Claude detecta e segue o mesmo padrao</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Revisao antes de confirmar:</strong> A mensagem gerada e apresentada para voce aprovar, editar ou rejeitar antes do commit ser executado</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Co-authored-by:</strong> Adiciona automaticamente uma tag de co-autoria do Claude na mensagem de commit, mantendo rastreabilidade</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Dados/Pesquisa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> O Que o /commit Faz Por Baixo
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li><strong class="text-white">git status</strong> - Identifica arquivos modificados, novos e deletados (staged e unstaged)</li>
-          <li><strong class="text-white">git diff</strong> - Le o conteudo exato das mudancas para entender o contexto</li>
-          <li><strong class="text-white">git log</strong> - Verifica os ultimos commits para seguir o estilo de mensagens do projeto</li>
-          <li><strong class="text-white">Staging inteligente</strong> - Se ha arquivos unstaged, o Claude pergunta quais voce quer incluir</li>
-          <li><strong class="text-white">Protecao</strong> - Nunca comita arquivos sensiveis (.env, credentials) sem aviso explicito</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300 mb-3">
-          O /commit gera mensagens drasticamente melhores quando as mudancas sao atomicas. Se voce fez 5 coisas diferentes no mesmo batch de arquivos, a mensagem vai tentar cobrir tudo e ficar generica. Prefira commitar mudancas relacionadas juntas:
-        </p>
-        <p class="text-neutral-300">
-          Primeiro implemente a feature, rode <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">/commit</code>. Depois faca o fix de estilo, rode <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">/commit</code> de novo. Dois commits claros valem mais que um commit confuso. O Claude entende cada mudanca isolada com muito mais precisao.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Fazer mudancas atomicas antes de rodar /commit</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Revisar a mensagem gerada antes de confirmar</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Deixar o Claude detectar e seguir as convencoes do repo</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Acumular dezenas de mudancas nao-relacionadas e rodar /commit</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Aceitar a mensagem sem ler (pode haver imprecisoes)</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Comitar arquivos .env ou credenciais sem verificar o staging</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- TOPICO 2: /review -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section id="topico-2" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">🔍 /review - Code Review Automatico</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-emerald-400">/review</strong> executa um code review completo das mudancas atuais, analisando por camadas: seguranca, bugs, performance e qualidade de codigo. Funciona como ter um reviewer senior olhando seu diff antes de voce commitar. Cada problema encontrado e classificado por severidade para que voce saiba exatamente onde focar.
-      </p>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Conceito Principal
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          O /review nao e um linter. Ele entende <strong class="text-white">semantica</strong>. Enquanto um linter verifica regras sintaticas (identacao, ponto-e-virgula), o /review entende o que o codigo faz e identifica problemas logicos, vulnerabilidades de seguranca, gargalos de performance e padroes que vao causar dor de cabeca em manutencao.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Camada 1 - Seguranca:</strong> SQL injection, XSS, secrets expostos, autenticacao bypass, inputs nao-sanitizados, permissoes excessivas</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Camada 2 - Bugs:</strong> Null pointer exceptions, race conditions, off-by-one errors, edge cases nao tratados, estados impossiveis</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Camada 3 - Performance:</strong> N+1 queries, loops desnecessarios, alocacoes excessivas, falta de caching, re-renders evitaveis</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Camada 4 - Qualidade:</strong> Nomes pouco claros, funcoes grandes demais, falta de tratamento de erros, duplicacao de logica</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Dados/Pesquisa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Classificacao de Severidade
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li><strong class="text-red-400">Critical</strong> - Problemas que devem ser corrigidos antes de qualquer merge. Vulnerabilidades de seguranca, bugs que causam perda de dados, crashes em producao</li>
-          <li><strong class="text-yellow-400">Important</strong> - Problemas que afetam qualidade significativamente. Performance degradada, logica de negocio incorreta, tratamento de erro insuficiente</li>
-          <li><strong class="text-blue-400">Minor</strong> - Sugestoes de melhoria. Nomes melhores, simplificacao de logica, oportunidades de refactoring, documentacao ausente</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300 mb-3">
-          Adote a regra: <strong class="text-white">nunca rode /commit em codigo de producao sem antes rodar /review</strong>. O custo de tokens do review e insignificante comparado ao custo de um bug em producao. O /review pega coisas que voce nao ve porque esta imerso no codigo.
-        </p>
-        <p class="text-neutral-300">
-          Depois de receber o review, voce pode pedir ao Claude para corrigir os problemas identificados diretamente. Diga algo como "corrija os problemas Critical e Important do review" e ele aplica os fixes automaticamente. Depois rode <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">/review</code> novamente para confirmar que tudo foi resolvido.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Rodar /review antes de todo /commit em codigo de producao</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Focar primeiro nos itens Critical, depois Important</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Pedir ao Claude para corrigir os problemas encontrados</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Ignorar itens Critical porque "funciona no meu ambiente"</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Usar /review como substituto para testes automatizados</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Achar que um review limpo significa zero bugs (e uma camada, nao a unica)</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- TOPICO 3: /pr -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section id="topico-3" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">🚀 /pr - Pull Request Instantaneo</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-emerald-400">/pr</strong> analisa todos os commits da sua branch atual, gera um titulo conciso e uma descricao formatada com Summary e Test Plan, e cria o Pull Request no GitHub automaticamente via <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">gh CLI</code>. O que antes levava 5-10 minutos escrevendo descricao e formatando, agora leva segundos.
-      </p>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Conceito Principal
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          O /pr nao e um wrapper simples do <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">gh pr create</code>. Ele analisa todo o historico de commits da branch desde que ela divergiu da branch base, entende o conjunto completo de mudancas, e gera uma descricao que cobre tudo de forma coerente.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Analise completa:</strong> Le todos os commits da branch, nao apenas o ultimo. Entende a narrativa das mudancas como um todo</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Titulo curto:</strong> Gera um titulo com menos de 70 caracteres que captura a essencia da mudanca</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Summary + Test Plan:</strong> A descricao segue um formato padrao com bullet points do que mudou e um checklist de como testar</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Criacao automatica:</strong> Push da branch e criacao do PR acontecem em sequencia, sem interacao manual com o GitHub</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Timeline -->
-      <div class="space-y-6 mb-6">
-        <h3 class="text-lg font-semibold text-emerald-400 mb-2">Fluxo Ideal de PR</h3>
-        <div class="flex items-start space-x-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-            <span class="text-emerald-400 font-bold">1</span>
-          </div>
-          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
-            <h4 class="font-semibold text-white mb-2">/review</h4>
-            <p class="text-sm text-neutral-400 mb-3">Antes de tudo</p>
-            <p class="text-neutral-300 text-sm">Rode o review para identificar e corrigir problemas. Nao abra PR com issues Critical pendentes.</p>
-          </div>
-        </div>
-        <div class="flex items-start space-x-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-            <span class="text-emerald-400 font-bold">2</span>
-          </div>
-          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
-            <h4 class="font-semibold text-white mb-2">/commit</h4>
-            <p class="text-sm text-neutral-400 mb-3">Commits limpos</p>
-            <p class="text-neutral-300 text-sm">Garanta que todas as mudancas estao commitadas com mensagens claras. O /pr usa o historico de commits para gerar a descricao.</p>
-          </div>
-        </div>
-        <div class="flex items-start space-x-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-            <span class="text-emerald-400 font-bold">3</span>
-          </div>
-          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
-            <h4 class="font-semibold text-white mb-2">/pr</h4>
-            <p class="text-sm text-neutral-400 mb-3">Pull Request pronto</p>
-            <p class="text-neutral-300 text-sm">O Claude analisa os commits, gera titulo e body, faz push da branch e cria o PR no GitHub. Voce recebe a URL do PR na resposta.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Alerta -->
-      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center">
-          <span class="mr-2">⚠️</span> Pre-requisito
-        </h3>
-        <p class="text-neutral-300">
-          O /pr requer o <strong class="text-white">GitHub CLI (gh)</strong> instalado e autenticado. Rode <code class="bg-dark-700 px-2 py-1 rounded text-red-400">gh auth status</code> para verificar. Se nao estiver configurado, rode <code class="bg-dark-700 px-2 py-1 rounded text-red-400">gh auth login</code> primeiro. Sem o gh CLI autenticado, o /pr vai falhar ao tentar criar o PR.
-        </p>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300 mb-3">
-          Quanto melhores forem suas mensagens de commit, melhor sera a descricao do PR. O /pr usa os commits como fonte primaria de informacao. Se voce usou /commit para gerar mensagens descritivas ao longo do desenvolvimento, o PR praticamente se escreve sozinho.
-        </p>
-        <p class="text-neutral-300">
-          O formato padrao gerado inclui <strong class="text-white">## Summary</strong> com bullet points das mudancas e <strong class="text-white">## Test plan</strong> com checklist de verificacao. Voce pode personalizar pedindo ao Claude para adicionar secoes especificas antes de criar o PR.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Seguir o fluxo /review > /commit > /pr em sequencia</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Verificar que gh CLI esta autenticado antes de usar /pr</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Revisar o titulo e body gerados antes de confirmar a criacao</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Criar PR com mudancas nao-commitadas (o /pr nao ve uncommitted changes)</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Pular o /review antes do /pr em codigo de producao</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Usar /pr sem verificar em qual branch voce esta</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- TOPICO 4: /init -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section id="topico-4" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">🏗️ /init - Inicializacao do Projeto</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-emerald-400">/init</strong> gera automaticamente um arquivo <strong class="text-white">CLAUDE.md</strong> para o seu projeto. O Claude explora a estrutura de pastas, identifica a stack tecnologica, descobre comandos de build/test, detecta convencoes de codigo e cria um arquivo de memoria do projeto que sera carregado em todas as sessoes futuras.
-      </p>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Conceito Principal
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          O CLAUDE.md e o equivalente a dar ao Claude um "manual do projeto". Sem ele, cada sessao nova comeca do zero - o Claude precisa re-descobrir a stack, as convencoes e os padroes. Com o CLAUDE.md, ele ja entra sabendo como o projeto funciona.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Exploracao automatica:</strong> O Claude navega pelos arquivos do projeto, le package.json, Makefile, Dockerfile, configs e entende a stack</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Deteccao de convencoes:</strong> Identifica padroes de nomeacao, estrutura de pastas, estilo de codigo e frameworks em uso</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Comandos uteis:</strong> Descobre como rodar testes, build, lint, deploy e outros comandos do projeto</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Persistencia:</strong> O CLAUDE.md e carregado automaticamente em toda sessao do Claude Code naquele diretorio</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Dados/Pesquisa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> O Que o /init Detecta
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li><strong class="text-white">Linguagens e frameworks:</strong> TypeScript, React, Node.js, Python, Go, Rust e suas respectivas configs</li>
-          <li><strong class="text-white">Gerenciadores de pacotes:</strong> npm, yarn, pnpm, pip, cargo e seus lockfiles</li>
-          <li><strong class="text-white">Scripts de build/test:</strong> Scripts do package.json, Makefile targets, docker-compose services</li>
-          <li><strong class="text-white">Estrutura de pastas:</strong> src/, lib/, tests/, docs/ e como o codigo esta organizado</li>
-          <li><strong class="text-white">Configuracoes:</strong> ESLint, Prettier, tsconfig, .env.example e outras configs</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300 mb-3">
-          O /init gera um bom ponto de partida, mas <strong class="text-white">voce deve revisar e personalizar o resultado</strong>. Adicione regras especificas que so voce sabe: "nunca usar ORM X", "sempre usar o pattern Y para endpoints", "testes devem cobrir cenarios A, B e C". Quanto mais contexto voce adicionar ao CLAUDE.md, melhores serao todas as sessoes futuras.
-        </p>
-        <p class="text-neutral-300">
-          Voce pode ter CLAUDE.md em diferentes niveis: na raiz do projeto (regras do projeto), no diretorio home (regras globais), e em subdiretorios (regras especificas de modulo). Todos sao carregados e combinados.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Rodar /init assim que comecar a usar Claude Code em um projeto</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Revisar e enriquecer o CLAUDE.md gerado com suas preferencias</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Commitar o CLAUDE.md no repositorio para compartilhar com o time</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Aceitar o CLAUDE.md gerado sem ler (pode conter imprecisoes)</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Colocar secrets ou tokens no CLAUDE.md (ele vai para o git)</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Trabalhar em projetos sem CLAUDE.md (sessoes comecam do zero toda vez)</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- TOPICO 5: /doctor -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section id="topico-5" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">🩺 /doctor - Diagnostico do Ambiente</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-emerald-400">/doctor</strong> executa um checklist automatico de diagnostico na sua instalacao do Claude Code. Verifica versao, autenticacao, status dos MCPs, permissoes de acesso, dependencias e configuracoes. Quando algo para de funcionar e voce nao sabe por que, o /doctor e o primeiro comando que voce deve rodar.
-      </p>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Conceito Principal
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          O /doctor funciona como um mecanico automatizado. Ele roda uma serie de verificacoes e, para cada problema encontrado, aponta a causa provavel e sugere o comando ou acao para corrigir. Nao e um diagnostico generico: ele e especifico para o seu ambiente.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Versao do Claude Code:</strong> Verifica se voce esta na versao mais recente e sugere atualizacao se nao estiver</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Autenticacao:</strong> Confirma que sua sessao esta autenticada corretamente com a API da Anthropic</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">MCPs:</strong> Testa cada MCP server configurado, verifica se esta respondendo e identifica falhas de conexao</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Permissoes:</strong> Verifica permissoes de leitura/escrita nos diretorios necessarios</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Dependencias:</strong> Checa se Node.js, git, gh CLI e outras dependencias estao instaladas e acessiveis</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Dados/Pesquisa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">🔍</span> Problemas Comuns que o /doctor Detecta
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li><strong class="text-white">MCP desconectado:</strong> Um MCP server crashou silenciosamente. O /doctor identifica qual e sugere reiniciar</li>
-          <li><strong class="text-white">Versao desatualizada:</strong> Voce esta usando uma versao antiga que nao tem features ou fixes importantes</li>
-          <li><strong class="text-white">Autenticacao expirada:</strong> O token de API expirou ou foi revogado. O /doctor aponta e sugere re-autenticacao</li>
-          <li><strong class="text-white">Permissoes insuficientes:</strong> O Claude Code nao consegue ler/escrever em diretorios necessarios</li>
-          <li><strong class="text-white">Dependencia ausente:</strong> Uma ferramenta necessaria (git, node, gh) nao esta no PATH ou nao esta instalada</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300 mb-3">
-          Rode <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">/doctor</code> sempre que alguma integracao parar de funcionar inesperadamente. Antes de tentar reinstalar, reconfigurar ou pesquisar no Google, o /doctor provavelmente vai identificar o problema e te dar a solucao em segundos.
-        </p>
-        <p class="text-neutral-300">
-          Tambem e util rodar /doctor periodicamente como manutencao preventiva. Problemas pequenos (como um MCP que falha intermitentemente) podem ser detectados e resolvidos antes de causar interrupcoes no seu workflow.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Rodar /doctor como primeiro passo de qualquer troubleshooting</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Seguir as sugestoes de correcao que o /doctor fornece</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Usar periodicamente como manutencao preventiva</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Reinstalar o Claude Code antes de rodar /doctor</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Ignorar warnings do /doctor (problemas pequenos crescem)</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Tentar debugar MCPs manualmente sem primeiro consultar /doctor</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- TOPICO 6: Fluxo Completo com Slash Commands -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section id="topico-6" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">🔗 Fluxo Completo com Slash Commands</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        Cada slash command individual resolve um problema especifico. Mas o poder real aparece quando voce os <strong class="text-emerald-400">encadeia em um pipeline de producao</strong>. O fluxo padrao <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">/init > desenvolver > /review > /commit > /pr</code> transforma seu workflow de desenvolvimento em um sistema onde cada passo agrega qualidade automaticamente.
-      </p>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> O Pipeline de Producao
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Pense nos slash commands nao como comandos isolados, mas como etapas de uma linha de producao. Cada etapa recebe o output da anterior e agrega valor. O resultado final e codigo revisado, bem documentado, com commits claros e PRs profissionais.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">/init (uma vez):</strong> Cria o CLAUDE.md do projeto. Todas as sessoes futuras comecam com contexto. Faca isso no primeiro dia e nunca mais comece do zero</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">Desenvolvimento:</strong> Implemente a feature ou fix normalmente com o Claude. Use os comandos do Modulo 1.1 (/cost, /compact, /clear) para gerenciar a sessao</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">/review:</strong> Revisa tudo antes de commitar. Corrige Critical e Important. Garante qualidade antes do commit</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">/commit:</strong> Gera mensagem descritiva que captura o "por que" da mudanca. Commits atomicos e claros</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-emerald-400 mt-1">•</span>
-            <span><strong class="text-white">/pr:</strong> Cria o PR com descricao completa, Summary e Test Plan. Push e criacao em um unico passo</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Timeline do Pipeline Completo -->
-      <div class="space-y-6 mb-6">
-        <h3 class="text-lg font-semibold text-emerald-400 mb-2">Pipeline em Acao: Exemplo Real</h3>
-        <div class="flex items-start space-x-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-            <span class="text-emerald-400 font-bold">1</span>
-          </div>
-          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
-            <h4 class="font-semibold text-white mb-2">Inicializacao (uma unica vez)</h4>
-            <p class="text-sm text-neutral-400 mb-3">Primeiro dia no projeto</p>
-            <p class="text-neutral-300 text-sm">Rode <code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400">/init</code> na raiz do projeto. Revise o CLAUDE.md gerado, adicione suas regras e preferencias, commite no repo. A partir de agora, toda sessao do Claude Code neste projeto carrega esse contexto.</p>
-          </div>
-        </div>
-        <div class="flex items-start space-x-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-            <span class="text-emerald-400 font-bold">2</span>
-          </div>
-          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
-            <h4 class="font-semibold text-white mb-2">Desenvolvimento</h4>
-            <p class="text-sm text-neutral-400 mb-3">Trabalhando na feature/fix</p>
-            <p class="text-neutral-300 text-sm">Escreva codigo, debugue, refatore. Use os comandos do Modulo 1.1 para gerenciar a sessao: <code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400">/cost</code> para monitorar, <code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400">/compact</code> quando necessario, <code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400">/clear</code> para foco.</p>
-          </div>
-        </div>
-        <div class="flex items-start space-x-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-            <span class="text-emerald-400 font-bold">3</span>
-          </div>
-          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
-            <h4 class="font-semibold text-white mb-2">Review + Commit + PR</h4>
-            <p class="text-sm text-neutral-400 mb-3">Finalizacao em 3 comandos</p>
-            <p class="text-neutral-300 text-sm">Rode <code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400">/review</code>, corrija issues. Rode <code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400">/commit</code>, confirme a mensagem. Rode <code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400">/pr</code>, receba a URL. Tres comandos e o trabalho esta entregue com qualidade profissional.</p>
-          </div>
-        </div>
-        <div class="flex items-start space-x-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-            <span class="text-emerald-400 font-bold">4</span>
-          </div>
-          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
-            <h4 class="font-semibold text-white mb-2">Troubleshooting (quando necessario)</h4>
-            <p class="text-sm text-neutral-400 mb-3">Algo deu errado</p>
-            <p class="text-neutral-300 text-sm">Se qualquer passo falha, rode <code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400">/doctor</code> para diagnosticar. O /doctor identifica problemas de configuracao, MCPs falhando, autenticacao expirada e outros problemas do ambiente que podem impedir os outros comandos de funcionar.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300 mb-3">
-          A sequencia <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">/review > /commit > /pr</code> deveria se tornar tao automatica quanto salvar um arquivo. Com o tempo, voce internaliza o fluxo e ele leva menos de 2 minutos do inicio ao PR criado. Compare isso com os 15-20 minutos de escrever mensagem de commit, revisar mentalmente, escrever descricao do PR e navegar pela interface do GitHub.
-        </p>
-        <p class="text-neutral-300">
-          Cada passo do pipeline tambem funciona isoladamente. Voce pode usar /review sem /commit, ou /commit sem /pr. O pipeline completo e o ideal, mas cada comando ja agrega valor individualmente. Comece usando um por vez e va adicionando os outros conforme se sentir confortavel.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Internalizar o pipeline /review > /commit > /pr como habito</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Usar /init no primeiro dia e manter o CLAUDE.md atualizado</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Combinar com os comandos do Modulo 1.1 para sessoes completas</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Pular o /review achando que seu codigo nao precisa de revisao</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Tentar memorizar o pipeline em vez de pratica-lo gradualmente</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Abandonar o pipeline quando um passo falha (use /doctor e tente novamente)</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- RESUMO FINAL -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="mb-12">
-      <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
-        <h2 class="text-2xl font-bold mb-6 flex items-center">
-          <span class="mr-3">📋</span> Resumo do Modulo
-        </h2>
-
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start space-x-3">
-            <span class="text-emerald-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">/commit gera mensagens inteligentes</strong>
-              <span class="text-neutral-400"> - Analisa o diff real, segue convencoes do repo e descreve o "por que" da mudanca</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-emerald-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">/review e seu reviewer senior automatico</strong>
-              <span class="text-neutral-400"> - Analisa seguranca, bugs, performance e qualidade com classificacao Critical/Important/Minor</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-emerald-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">/pr cria Pull Requests profissionais em segundos</strong>
-              <span class="text-neutral-400"> - Analisa todos os commits da branch, gera Summary + Test Plan e cria o PR automaticamente</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-emerald-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">/init cria a memoria do projeto</strong>
-              <span class="text-neutral-400"> - Gera CLAUDE.md que persiste contexto entre sessoes. Rode uma vez, beneficie-se para sempre</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-emerald-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">/doctor diagnostica problemas do ambiente</strong>
-              <span class="text-neutral-400"> - Checklist automatico de troubleshooting com sugestoes de correcao. Rode antes de reinstalar qualquer coisa</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-emerald-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">O pipeline completo e um sistema de producao</strong>
-              <span class="text-neutral-400"> - /init > desenvolver > /review > /commit > /pr transforma seu workflow em qualidade automatizada</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-dark-800/50 rounded-lg p-4 mb-4">
-          <h3 class="font-semibold text-neutral-400 mb-2">Modulo Anterior:</h3>
-          <p class="text-neutral-300">1.1 - Comandos Essenciais do Terminal</p>
-        </div>
-
-        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-          <h3 class="font-semibold text-emerald-400 mb-2">Proximo Modulo:</h3>
-          <p class="text-neutral-300">1.3 - Flags de Linha de Comando</p>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="modulo-1-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-            ← Modulo Anterior
-          </a>
-          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-            Voltar para Trilha
-          </a>
-          <a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
-            Proximo Modulo →
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>6 Pilares do Claude Code Resumido - 2026 | <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
+NAVIGATION
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">6P Summary</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://duclub" target="_blank">duclub</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
+<span class="sm:hidden">T1</span>
+<span class="hidden sm:inline">Shortcuts</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">
+<span class="sm:hidden">T2</span>
+<span class="hidden sm:inline">Starter Pack</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">T3</span>
+<span class="hidden sm:inline">Workflows</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">
+<span class="sm:hidden">T4</span>
+<span class="hidden sm:inline">Prompts</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">
+<span class="sm:hidden">T5</span>
+<span class="hidden sm:inline">Skills</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">
+<span class="sm:hidden">T6</span>
+<span class="hidden sm:inline">MCPs</span>
+</a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20">
+<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+BREADCRUMB
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Track 1</a>
+<span>/</span>
+<span class="text-emerald-400">Module 1.2</span>
+</div>
+</nav>
+HEADER
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULE 1.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">⚡ Native Slash Commands</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Claude Code's production commands: smart commit, automatic code review, instant pull requests, project initialization and environment diagnosis. These slash commands transform manual tasks that take minutes into operations that take seconds.</p>
+Stats Banner
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">25</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Basic</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Practical</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+CONTENT
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+═══════════════════════════ ════════════════════════════
+TOPIC 1: /commit
+═══════════════════════════ ════════════════════════════
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📝 /commit - Smart Commit with AI</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">The command<strong class="text-emerald-400">/commit</strong>analyzes all changes in your repository (staged and unstaged), understands what was changed and automatically generates a descriptive commit message. It is not a generic summary: Claude reads the real diff, understands the context of the changes and writes a message that describes the<strong class="text-white">"why"</strong>of change, not just the “what”.</p>
+Main Concept
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">/commit is not just a shortcut to<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">git commit -m "..."</code>. It runs a complete pipeline: runs<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">git status</code>, analyzes the<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">git diff</code>, checks recent commit history to maintain style consistency, and generates a message that follows repository conventions.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Real diff analysis:</strong>Claude reads each changed line, understands the intent of the change and generates a message that captures the purpose, not just lists files</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Automatic conventions:</strong>If the repository already uses Conventional Commits (feat:, fix:, refactor:), Claude detects it and follows the same pattern</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Review before confirming:</strong>The generated message is presented for you to approve, edit or reject before the commit is executed</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Co-authored-by:</strong>Automatically adds a Claude co-author tag to the commit message, maintaining traceability</span>
+</li>
+</ul>
+</div>
+Data/Research
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>What /commit does underneath</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong class="text-white">git status</strong>- Identifies modified, new and deleted files (staged and unstaged)</li>
+<li><strong class="text-white">git diff</strong>- Read the exact content of the changes to understand the context</li>
+<li><strong class="text-white">git log</strong>- Checks the latest commits to follow the project's messaging style</li>
+<li><strong class="text-white">Smart staging</strong>- If there are unstaged files, Claude asks which ones you want to include</li>
+<li><strong class="text-white">Protection</strong>- Never commit sensitive files (.env, credentials) without explicit warning</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300 mb-3">/commit generates drastically better messages when changes are atomic. If you did 5 different things in the same batch of files, the message will try to cover everything and be generic. Prefer to commit related changes together:</p>
+<p class="text-neutral-300">First implement the feature, run<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">/commit</code>. Then do the style fix, rotate<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">/commit</code>again. Two clear commits are worth more than one confusing commit. Claude understands each isolated change with much more precision.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Make atomic changes before running /commit</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Review the generated message before confirming</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Let Claude detect and follow repo conventions</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Accumulate dozens of unrelated changes and run /commit</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Accept the message without reading (there may be inaccuracies)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Commit .env files or credentials without checking staging</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+═══════════════════════════ ════════════════════════════
+TOPIC 2: /review
+═══════════════════════════ ════════════════════════════
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🔍 /review - Automatic Code Review</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-emerald-400">/review</strong>performs a complete code review of current changes, analyzing layers: security, bugs, performance and code quality. It works like having a senior reviewer look at your diff before you commit. Each problem found is classified by severity so you know exactly where to focus.</p>
+Main Concept
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">/review is not a linter. He understands<strong class="text-white">semantics</strong>. While a linter checks syntactic rules (identation, semicolons), /review understands what the code does and identifies logical problems, security vulnerabilities, performance bottlenecks and patterns that will cause maintenance headaches.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Layer 1 - Security:</strong>SQL injection, XSS, exposed secrets, bypass authentication, unsanitized inputs, excessive permissions</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Layer 2 - Bugs:</strong>Null pointer exceptions, race conditions, off-by-one errors, unhandled edge cases, impossible states</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Layer 3 - Performance:</strong>N+1 queries, unnecessary loops, excessive allocations, lack of caching, avoidable re-renders</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Layer 4 - Quality:</strong>Unclear names, oversized functions, lack of error handling, duplication of logic</span>
+</li>
+</ul>
+</div>
+Data/Research
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Severity Classification</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong class="text-red-400">Critical</strong>- Problems that must be corrected before any merge. Security vulnerabilities, bugs that cause data loss, production crashes</li>
+<li><strong class="text-yellow-400">Important</strong>- Problems that significantly affect quality. Degraded performance, incorrect business logic, insufficient error handling</li>
+<li><strong class="text-blue-400">Minor</strong>- Suggestions for improvement. Better names, simplified logic, refactoring opportunities, missing documentation</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300 mb-3">Adopt the rule:<strong class="text-white">Never run /commit in production code without first running /review</strong>. The cost of review tokens is insignificant compared to the cost of a bug in production. /review picks up things you don't see because you're immersed in the code.</p>
+<p class="text-neutral-300">After receiving the review, you can ask Claude to fix the identified problems directly. Say something like "fix the Critical and Important issues in the review" and it will apply the fixes automatically. Then rotate<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">/review</code>again to confirm that everything has been resolved.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Run /review before /commit in production code</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Focus on Critical items first, then Important</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Ask Claude to fix the problems found</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Ignore Critical items because "it works in my environment"</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Use /review as a fallback for automated testing</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Thinking that a clean review means zero bugs (it's a layer, not the only one)</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+═══════════════════════════ ════════════════════════════
+TOPIC 3: /pr
+═══════════════════════════ ════════════════════════════
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🚀 /pr - Instant Pull Request</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-emerald-400">/pr</strong>analyzes all commits from your current branch, generates a concise title and a formatted description with Summary and Test Plan, and creates the Pull Request on GitHub automatically via<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">gh CLI</code>. What used to take 5-10 minutes writing description and formatting now takes seconds.</p>
+Main Concept
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">/pr is not a simple wrapper for<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">gh pr create</code>. It analyzes the branch's entire commit history since it diverged from the base branch, understands the complete set of changes, and generates a description that covers everything coherently.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Complete analysis:</strong>Read all commits in the branch, not just the last one. Understands the narrative of changes as a whole</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Short title:</strong>Generates a headline of less than 70 characters that captures the essence of the change</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Summary + Test Plan:</strong>The description follows a standard format with bullet points of what changed and a checklist on how to test</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Automatic creation:</strong>Pushing the branch and creating the PR happen in sequence, without manual interaction with GitHub</span>
+</li>
+</ul>
+</div>
+Timeline
+<div class="space-y-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-2">Optimal PR Flow</h3>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+<span class="text-emerald-400 font-bold">1</span>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">/review</h4>
+<p class="text-sm text-neutral-400 mb-3">First of all</p>
+<p class="text-neutral-300 text-sm">Run the review to identify and fix problems. Do not open PR with pending Critical issues.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+<span class="text-emerald-400 font-bold">2</span>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">/commit</h4>
+<p class="text-sm text-neutral-400 mb-3">Clean commits</p>
+<p class="text-neutral-300 text-sm">Ensure all changes are committed with clear messages. /pr uses the commit history to generate the description.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+<span class="text-emerald-400 font-bold">3</span>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">/pr</h4>
+<p class="text-sm text-neutral-400 mb-3">Pull Request ready</p>
+<p class="text-neutral-300 text-sm">Claude analyzes the commits, generates title and body, pushes the branch and creates the PR on GitHub. You receive the PR URL in the response.</p>
+</div>
+</div>
+</div>
+Alert
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center">
+<span class="mr-2">⚠️</span>Prerequisite</h3>
+<p class="text-neutral-300">/pr requires the<strong class="text-white">GitHub CLI (gh)</strong>installed and authenticated. Rotate<code class="bg-dark-700 px-2 py-1 rounded text-red-400" data-notranslate="True">gh auth status</code>to check. If not configured, run<code class="bg-dark-700 px-2 py-1 rounded text-red-400" data-notranslate="True">gh auth login</code>first. Without the authenticated gh CLI, /pr will fail when trying to create the PR.</p>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300 mb-3">The better your commit messages are, the better the PR description will be. /pr uses commits as the primary source of information. If you used /commit to generate descriptive messages throughout development, the PR practically writes itself.</p>
+<p class="text-neutral-300">The default format generated includes<strong class="text-white">## Summary</strong>with bullet points of changes and<strong class="text-white">## Test plan</strong>with verification checklist. You can customize by asking Claude to add specific sections before creating the PR.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Follow the /review &gt; /commit &gt; /pr flow in sequence</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Check that gh CLI is authenticated before using /pr</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Review the generated title and body before confirming creation</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Create PR with uncommitted changes (/pr does not see uncommitted changes)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Skip /review before /pr in production code</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Use /pr without checking which branch you are on</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+═══════════════════════════ ════════════════════════════
+TOPIC 4: /init
+═══════════════════════════ ════════════════════════════
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🏗️ /init - Project Initialization</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-emerald-400">/init</strong>automatically generates a file<strong class="text-white">CLAUDE.md</strong>for your project. Claude explores the folder structure, identifies the technology stack, discovers build/test commands, detects code conventions and creates a project memory file that will be loaded in all future sessions.</p>
+Main Concept
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">CLAUDE.md is the equivalent of giving Claude a "project manual". Without it, each new session starts from scratch - Claude needs to re-discover the stack, conventions and patterns. With CLAUDE.md, he already knows how the project works.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Automatic exploration:</strong>Claude navigates through the project files, read package.json, Makefile, Dockerfile, configs and understands the stack</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Convention detection:</strong>Identifies naming patterns, folder structure, code style and frameworks in use</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Useful commands:</strong>Discover how to run tests, build, lint, deploy and other project commands</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Persistence:</strong>CLAUDE.md is automatically loaded in every Claude Code session in that directory</span>
+</li>
+</ul>
+</div>
+Data/Research
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>What /init Detects</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong class="text-white">Languages ​​and frameworks:</strong>TypeScript, React, Node.js, Python, Go, Rust and their respective configs</li>
+<li><strong class="text-white">Package Managers:</strong>npm, yarn, pnpm, pip, cargo and their lockfiles</li>
+<li><strong class="text-white">Build/test scripts:</strong>package.json scripts, Makefile targets, docker-compose services</li>
+<li><strong class="text-white">Folder structure:</strong>src/, lib/, tests/, docs/ and how the code is organized</li>
+<li><strong class="text-white">Settings:</strong>ESLint, Prettier, tsconfig, .env.example and other configs</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300 mb-3">/init provides a good starting point, but<strong class="text-white">you must review and customize the result</strong>. Add specific rules that only you know: "never use ORM X", "always use pattern Y for endpoints", "tests must cover scenarios A, B and C". The more context you add to CLAUDE.md, the better all future sessions will be.</p>
+<p class="text-neutral-300">You can have CLAUDE.md at different levels: in the project root (project rules), in the home directory (global rules), and in subdirectories (module-specific rules). All are loaded and combined.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Run /init as soon as you start using Claude Code in a project</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Review and enrich the CLAUDE.md generated with your preferences</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Commit CLAUDE.md to the repository to share with the team</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Accept the generated CLAUDE.md without reading it (may contain inaccuracies)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Put secrets or tokens in CLAUDE.md (it goes to git)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Work on projects without CLAUDE.md (sessions start from scratch every time)</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+═══════════════════════════ ════════════════════════════
+TOPIC 5: /doctor
+═══════════════════════════ ════════════════════════════
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🩺 /doctor - Environmental Diagnosis</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-emerald-400">/doctor</strong>runs an automatic diagnostic checklist on your Claude Code installation. Checks version, authentication, MCP status, access permissions, dependencies and configurations. When something stops working and you don't know why, /doctor is the first command you should run.</p>
+Main Concept
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">/doctor works like an automated mechanic. It runs a series of checks and, for each problem found, points out the likely cause and suggests the command or action to correct it. It is not a generic diagnosis: it is specific to your environment.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Claude Code version:</strong>Checks if you are on the latest version and suggests updating if not</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Authentication:</strong>Confirms that your session is correctly authenticated with the Anthropic API</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">MCPs:</strong>Tests each configured MCP server, checks if it is responding and identifies connection failures</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Permissions:</strong>Checks read/write permissions on the required directories</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Dependencies:</strong>Check if Node.js, git, gh CLI and other dependencies are installed and accessible</span>
+</li>
+</ul>
+</div>
+Data/Research
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">🔍</span>Common Problems that /doctor Detects</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong class="text-white">MCP disconnected:</strong>An MCP server has silently crashed. /doctor identifies which one and suggests restarting</li>
+<li><strong class="text-white">Outdated version:</strong>You are using an old version that has no important features or fixes</li>
+<li><strong class="text-white">Expired authentication:</strong>The API token has expired or been revoked. /doctor points and suggests re-authentication</li>
+<li><strong class="text-white">Insufficient permissions:</strong>Claude Code cannot read/write necessary directories</li>
+<li><strong class="text-white">Missing dependency:</strong>A required tool (git, node, gh) is not in the PATH or not installed</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300 mb-3">Rotate<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">/doctor</code>whenever any integration stops working unexpectedly. Before you try to reinstall, reconfigure or search on Google, /doctor will probably identify the problem and give you the solution in seconds.</p>
+<p class="text-neutral-300">It is also useful to run /doctor periodically as preventative maintenance. Small problems (like an MCP that fails intermittently) can be detected and resolved before causing disruptions to your workflow.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Run /doctor as the first step in any troubleshooting</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Follow the correction suggestions that /doctor provides</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Use periodically as preventive maintenance</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Reinstall Claude Code before running /doctor</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Ignore /doctor warnings (small problems grow)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Trying to debug MCPs manually without first consulting /doctor</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+═══════════════════════════ ════════════════════════════
+TOPIC 6: Complete Flow with Slash Commands
+═══════════════════════════ ════════════════════════════
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔗 Complete Flow with Slash Commands</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Each individual slash command solves a specific problem. But the real power comes when you<strong class="text-emerald-400">chain in a production pipeline</strong>. The standard flow<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">/init &gt; desenvolver &gt; /review &gt; /commit &gt; /pr</code>transforms your development workflow into a system where each step automatically adds quality.</p>
+Main Concept
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>The Production Pipeline</h3>
+<p class="text-neutral-300 mb-4">Think of slash commands not as isolated commands, but as steps in a production line. Each step receives the output of the previous one and adds value. The final result is revised code, well documented, with clear commits and professional PRs.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">/init (once):</strong>Creates the project's CLAUDE.md. All future sessions begin with context. Do it on day one and never start from scratch again</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">Development:</strong>Implement the feature or fix normally with Claude. Use the Modulo 1.1 commands (/cost, /compact, /clear) to manage the session</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">/review:</strong>Review everything before committing. Fixes Critical and Important. Ensure quality before commit</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">/commit:</strong>Generates descriptive message that captures the “why” of the change. Atomic and clear commits</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-1">•</span>
+<span><strong class="text-white">/pr:</strong>Create the PR with full description, Summary and Test Plan. Push and create in a single step</span>
+</li>
+</ul>
+</div>
+Complete Pipeline Timeline
+<div class="space-y-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-2">Pipeline in Action: Real Example</h3>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+<span class="text-emerald-400 font-bold">1</span>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Initialization (one time)</h4>
+<p class="text-sm text-neutral-400 mb-3">First day on the project</p>
+<p class="text-neutral-300 text-sm">Rotate<code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400" data-notranslate="True">/init</code>at the root of the project. Review the generated CLAUDE.md, add your rules and preferences, commit to the repo. From now on, every Claude Code session in this project carries this context.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+<span class="text-emerald-400 font-bold">2</span>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Development</h4>
+<p class="text-sm text-neutral-400 mb-3">Working on the feature/fix</p>
+<p class="text-neutral-300 text-sm">Write code, debug, refactor. Use the commands from Module 1.1 to manage the session:<code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400" data-notranslate="True">/cost</code>to monitor,<code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400" data-notranslate="True">/compact</code>when necessary,<code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400" data-notranslate="True">/clear</code>for focus.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+<span class="text-emerald-400 font-bold">3</span>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Review + Commit + PR</h4>
+<p class="text-sm text-neutral-400 mb-3">Finishing in 3 commands</p>
+<p class="text-neutral-300 text-sm">Rotate<code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400" data-notranslate="True">/review</code>, fix issues. Rotate<code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400" data-notranslate="True">/commit</code>, confirm the message. Rotate<code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400" data-notranslate="True">/pr</code>, receive the URL. Three commands and the work is delivered with professional quality.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+<span class="text-emerald-400 font-bold">4</span>
+</div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Troubleshooting (when necessary)</h4>
+<p class="text-sm text-neutral-400 mb-3">Something went wrong</p>
+<p class="text-neutral-300 text-sm">If any step fails, run<code class="bg-dark-700 px-1 py-0.5 rounded text-emerald-400" data-notranslate="True">/doctor</code>to diagnose. /doctor identifies configuration problems, failing MCPs, expired authentication, and other environmental problems that may prevent other commands from working.</p>
+</div>
+</div>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300 mb-3">The sequence<code class="bg-dark-700 px-2 py-1 rounded text-emerald-400" data-notranslate="True">/review &gt; /commit &gt; /pr</code>it should become as automatic as saving a file. Over time, you internalize the flow and it takes less than 2 minutes from start to PR created. Compare that to the 15-20 minutes of writing commit message, mentally reviewing, writing PR description, and navigating the GitHub interface.</p>
+<p class="text-neutral-300">Each step in the pipeline also works in isolation. You can use /review without /commit, or /commit without /pr. The complete pipeline is ideal, but each command adds value individually. Start using one at a time and add others as you feel comfortable.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Internalize the /review &gt; /commit &gt; /pr pipeline as usual</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Use /init on the first day and keep CLAUDE.md updated</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Combine with Module 1.1 commands for full sessions</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Skip /review thinking your code doesn't need review</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Trying to memorize the pipeline instead of gradually practicing it</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Abandon the pipeline when a step fails (use /doctor and try again)</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+═══════════════════════════ ════════════════════════════
+FINAL SUMMARY
+═══════════════════════════ ════════════════════════════
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center">
+<span class="mr-3">📋</span>Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3">
+<span class="text-emerald-400 mt-1">✓</span>
+<div>
+<strong class="text-white">/commit generates smart messages</strong>
+<span class="text-neutral-400">- Analyzes the actual diff, follows repo conventions and describes the "why" of the change</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-emerald-400 mt-1">✓</span>
+<div>
+<strong class="text-white">/review and its automatic senior reviewer</strong>
+<span class="text-neutral-400">- Analyzes security, bugs, performance and quality with Critical/Important/Minor classification</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-emerald-400 mt-1">✓</span>
+<div>
+<strong class="text-white">/pr creates professional Pull Requests in seconds</strong>
+<span class="text-neutral-400">- Analyzes all branch commits, generates Summary + Test Plan and creates the PR automatically</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-emerald-400 mt-1">✓</span>
+<div>
+<strong class="text-white">/init creates project memory</strong>
+<span class="text-neutral-400">- Generates CLAUDE.md that persists context between sessions. Spin once, benefit forever</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-emerald-400 mt-1">✓</span>
+<div>
+<strong class="text-white">/doctor diagnoses environmental problems</strong>
+<span class="text-neutral-400">- Automatic troubleshooting checklist with correction suggestions. Run before reinstalling anything</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-emerald-400 mt-1">✓</span>
+<div>
+<strong class="text-white">The complete pipeline is a production system</strong>
+<span class="text-neutral-400">- /init &gt; develop &gt; /review &gt; /commit &gt; /pr turns your workflow into automated quality</span>
+</div>
+</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-4">
+<h3 class="font-semibold text-neutral-400 mb-2">Previous Module:</h3>
+<p class="text-neutral-300">1.1 - Essential Terminal Commands</p>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Next Module:</h3>
+<p class="text-neutral-300">1.3 - Command Line Flags</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-1-1.html">← Previous Module</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">Return to Trail</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-3.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+FOOTER
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>6 Pillars of the Claude Code Summarized - 2026 |<a class="text-sky-400 hover:text-sky-300" href="https://duclub" target="_blank">duclub</a></p>
+</div>
+</footer>
+SCRIPTS
+<script data-notranslate="True">
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -959,6 +835,5 @@
       localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     });
   </script>
-
 </body>
 </html>
