@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+html
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo 3.6 - Code Review | 6 Pilares do Claude Code Resumido</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 3.6 - Code Review | 6 Pillars of the Claude Code Summarized</title>
+<script data-notranslate="True" src="https://cdn.tailwindcss.com"></script>
+<script data-notranslate="True">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-notranslate="True">
     body { font-family: 'Inter', sans-serif; } .dark body { background-color: #111827; }
     .topic-explanation { display: none; } .topic-explanation.active { display: block; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -19,212 +19,200 @@
   </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">6P Resumido</span></a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Atalhos</span></a>
-          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Starter Pack</span></a>
-          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Workflows</span></a>
-          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Prompts</span></a>
-          <a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Skills</span></a>
-          <a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">MCPs</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../../index.html" class="hover:text-purple-400">Inicio</a><span>/</span>
-      <a href="index.html" class="hover:text-purple-400">Trilha 3</a><span>/</span>
-      <span class="text-purple-400">Modulo 3.6</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MODULO 3.6</span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">👾 Code Review</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">Use o Claude Code para fazer code review automatico das suas mudancas antes de submeter, pegando bugs e melhorias.</p>
-      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Topicos</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">15</div><div class="text-xs text-neutral-400">Minutos</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Nivel</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Pratico</div><div class="text-xs text-neutral-400">Tipo</div></div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <section id="topico-1" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">🔍 Pedir Review ao Claude</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Antes de abrir um PR, peca ao Claude para <strong class="text-purple-400">revisar suas mudancas</strong>. Ele encontra bugs, vulnerabilidades e sugestoes de melhoria.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Diferentes formas de pedir review:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Revise minhas mudancas. Foque em bugs, seguranca e performance"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Analise o git diff e me diga se tem algum problema antes de eu fazer PR"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>O Claude le o diff, entende o contexto e aponta problemas especificos com sugestoes de correcao</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Via pipe: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">git diff | claude -p "Faca code review deste diff. Aponte bugs, security issues e melhorias"</code></p>
-      </div>
-    </section>
-
-    <section id="topico-2" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">⚡ O Comando /review</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">O comando <strong class="text-purple-400">/review</strong> e o atalho para code review automatico. Ele analisa todas as mudancas pendentes de uma vez.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Como o /review funciona:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Digite <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">/review</code> no Claude Code</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Ele analisa o diff completo (staged + unstaged) contra a branch base</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Retorna uma lista categorizada: bugs, seguranca, performance, estilo, sugestoes</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Use <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">/review</code> como seu ultimo passo antes de qualquer PR. E como ter um senior dev revisando seu codigo instantaneamente.</p>
-      </div>
-    </section>
-
-    <section id="topico-3" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">🔧 Resolver Feedback</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Apos o review, <strong class="text-purple-400">resolva cada item de feedback</strong> diretamente pedindo ao Claude para aplicar as correcoes sugeridas.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Ciclo de feedback e correcao:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Corrija todos os itens que voce apontou no review"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Ou seja seletivo: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Corrija os bugs e issues de seguranca. Ignore as sugestoes de estilo"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>O Claude aplica as correcoes mantendo o contexto do review original</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Discorde quando necessario: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"O item 3 nao se aplica porque X. Corrija apenas os itens 1, 2 e 4"</code></p>
-      </div>
-    </section>
-
-    <section id="topico-4" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">🔁 Re-Review</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Apos as correcoes, rode <strong class="text-purple-400">/review novamente</strong> para confirmar que todos os problemas foram resolvidos e nenhum novo foi introduzido.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">O ciclo review-fix-review garante qualidade:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>1. <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">/review</code> → encontra problemas</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>2. "Corrija os problemas" → aplica fixes</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>3. <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">/review</code> → confirma que esta tudo OK</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Um "clean review" (sem issues) e o sinal verde para fazer o PR. Se o Claude nao encontrar nada, voce pode ir com confianca.</p>
-      </div>
-    </section>
-
-    <section id="topico-5" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">🎯 Areas de Foco</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Direcione o review para <strong class="text-purple-400">areas especificas</strong> dependendo do tipo de mudanca que voce fez.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Customize o foco do review por tipo de mudanca:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Auth/seguranca: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Revise focando em: SQL injection, XSS, CSRF, validacao de input"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Performance: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Revise focando em: N+1 queries, memory leaks, loops desnecessarios"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>API: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Revise focando em: breaking changes, validacao de request, error handling"</code></span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Para mudancas em banco de dados: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Revise as migrations. Sao reversiveis? Tem risco de data loss? Precisa de backfill?"</code></p>
-      </div>
-    </section>
-
-    <section id="topico-6" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">📋 Checklist de Review</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Crie um <strong class="text-purple-400">checklist personalizado</strong> para o Claude usar em todos os reviews do seu projeto.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Adicione uma checklist ao CLAUDE.md para reviews consistentes:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Testes incluidos para novas funcionalidades</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Error handling em todos os pontos de falha</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Sem secrets ou credenciais hardcoded</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Logs adequados para debugging em producao</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Documentacao atualizada se a API mudou</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Adicione ao CLAUDE.md: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Ao fazer /review, sempre verifique: [sua checklist aqui]"</code>. O Claude seguira automaticamente.</p>
-      </div>
-    </section>
-
-    <section class="mb-12">
-      <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
-        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📋</span> Resumo do Modulo</h2>
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Pedir Review</strong><span class="text-neutral-400"> - Descreva o foco ou use pipe do diff</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">/review</strong><span class="text-neutral-400"> - Comando rapido para review completo</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Feedback</strong><span class="text-neutral-400"> - Resolva itens e discorde quando necessario</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Re-Review</strong><span class="text-neutral-400"> - Confirme que tudo foi resolvido</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Foco</strong><span class="text-neutral-400"> - Customize por tipo: seguranca, performance, API</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Checklist</strong><span class="text-neutral-400"> - Crie padroes no CLAUDE.md</span></div></div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-          <h3 class="font-semibold text-purple-400 mb-2">Proximo Modulo:</h3>
-          <p class="text-neutral-300">3.7 - Criar Pull Request</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="modulo-3-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar</a>
-          <a href="modulo-3-7.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Proximo Modulo →</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>6 Pilares do Claude Code Resumido - 2026 | <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-
-  <script>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">6P Summary</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://duclub" target="_blank">duclub</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Shortcuts</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Starter Pack</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Workflows</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Prompts</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">MCPs</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-purple-400" href="index.html">Track 3</a><span>/</span>
+<span class="text-purple-400">Module 3.6</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MODULE 3.6</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">👾 Code Review</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Use Claude Code to automatically code review your changes before submitting, catching bugs and improvements.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">15</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Practical</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🔍 Ask Claude for a review</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Before opening a PR, ask Claude to<strong class="text-purple-400">review your changes</strong>. It finds bugs, vulnerabilities and suggestions for improvement.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Different ways to request a review:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Revise minhas mudancas. Foque em bugs, seguranca e performance"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Analise o git diff e me diga se tem algum problema antes de eu fazer PR"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Claude reads the diff, understands the context and points out specific problems with correction suggestions</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">Via pipe:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">git diff | claude -p "Faca code review deste diff. Aponte bugs, security issues e melhorias"</code></p>
+</div>
+</section>
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">⚡ The /review Command</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">The command<strong class="text-purple-400">/review</strong>and the shortcut for automatic code review. It analyzes all pending changes at once.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">How /review works:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Enter<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">/review</code>at Claude Code</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>It analyzes the full diff (staged + unstaged) against the base branch</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Returns a categorized list: bugs, security, performance, style, suggestions</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">Use<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">/review</code>as your last step before any PR. And how to have a senior dev review your code instantly.</p>
+</div>
+</section>
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🔧 Resolve Feedback</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">After the review,<strong class="text-purple-400">resolve each feedback item</strong>directly asking Claude to apply the suggested corrections.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Feedback and correction cycle:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Corrija todos os itens que voce apontou no review"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>In other words, be selective:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Corrija os bugs e issues de seguranca. Ignore as sugestoes de estilo"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Claude applies the corrections while maintaining the context of the original review</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">Disagree when necessary:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"O item 3 nao se aplica porque X. Corrija apenas os itens 1, 2 e 4"</code></p>
+</div>
+</section>
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔁 Re-Review</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">After the corrections, run<strong class="text-purple-400">/review again</strong>to confirm that all problems have been resolved and no new ones have been introduced.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">The review-fix-review cycle guarantees quality:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>1. <code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">/review</code>→ finds problems</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>2. "Fix the problems" → apply fixes</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>3. <code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">/review</code>→ confirms that everything is OK</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">A "clean review" (no issues) and the green light to make the PR. If Claude doesn't find anything, you can go with confidence.</p>
+</div>
+</section>
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🎯 Focus Areas</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Direct the review to<strong class="text-purple-400">specific areas</strong>depending on the type of change you made.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Customize the focus of the review by type of change:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Auth/security:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Revise focando em: SQL injection, XSS, CSRF, validacao de input"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Performance:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Revise focando em: N+1 queries, memory leaks, loops desnecessarios"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>API:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Revise focando em: breaking changes, validacao de request, error handling"</code></span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">For database changes:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Revise as migrations. Sao reversiveis? Tem risco de data loss? Precisa de backfill?"</code></p>
+</div>
+</section>
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">📋 Review Checklist</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Create one<strong class="text-purple-400">personalized checklist</strong>for Claude to use in all reviews of his project.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Add a checklist to CLAUDE.md for consistent reviews:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Tests included for new features</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Error handling at all points of failure</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>No secrets or hardcoded credentials</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Logs suitable for debugging in production</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Documentation updated if the API has changed</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">Add to CLAUDE.md:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Ao fazer /review, sempre verifique: [sua checklist aqui]"</code>. Claude had followed automatically.</p>
+</div>
+</section>
+<section class="mb-12">
+<div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📋</span>Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Request Review</strong><span class="text-neutral-400">- Describe the focus or use diff pipe</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">/review</strong><span class="text-neutral-400">- Quick command for complete review</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Feedback</strong><span class="text-neutral-400">- Resolve items and disagree when necessary</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Re-Review</strong><span class="text-neutral-400">- Confirm that everything has been resolved</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Focus</strong><span class="text-neutral-400">- Customize by type: security, performance, API</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Checklist</strong><span class="text-neutral-400">- Create patterns in CLAUDE.md</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-purple-400 mb-2">Next Module:</h3>
+<p class="text-neutral-300">3.7 - Create Pull Request</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-3-5.html">← Back</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-7.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>6 Pillars of the Claude Code Summarized - 2026 |<a class="text-sky-400 hover:text-sky-300" href="https://duclub" target="_blank">duclub</a></p>
+</div>
+</footer>
+<script data-notranslate="True">
     function toggleTopic(button) { const t=button.closest('.topic-item'); const e=t.querySelector('.topic-explanation'); const m=button.closest('.bg-dark-800'); m.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==e)x.classList.remove('active')}); e.classList.toggle('active'); }
     const themeToggle=document.getElementById('theme-toggle'); const themeToggleDarkIcon=document.getElementById('theme-toggle-dark-icon'); const themeToggleLightIcon=document.getElementById('theme-toggle-light-icon'); const html=document.documentElement;
     if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){themeToggleDarkIcon.classList.remove('hidden');html.classList.remove('dark');}else{themeToggleLightIcon.classList.remove('hidden');}
