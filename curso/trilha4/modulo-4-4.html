@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+html
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo 4.4 - Prompts de Debugging | 6 Pilares do Claude Code Resumido</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 4.4 - Debugging Prompts | 6 Pillars of the Claude Code Summarized</title>
+<script data-notranslate="True" src="https://cdn.tailwindcss.com"></script>
+<script data-notranslate="True">tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-notranslate="True">
     body{font-family:'Inter',sans-serif}.dark body{background-color:#111827}
     .topic-explanation{display:none}.topic-explanation.active{display:block}
     html:not(.dark) body{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 50%,#f1f5f9 100%)}
@@ -19,92 +19,81 @@
   </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">6P Resumido</span></a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Atalhos</span></a>
-          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Starter Pack</span></a>
-          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Workflows</span></a>
-          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Prompts</span></a>
-          <a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Skills</span></a>
-          <a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">MCPs</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- BREADCRUMB -->
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../../index.html" class="hover:text-amber-400">Inicio</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-amber-400">Trilha 4</a>
-      <span>/</span>
-      <span class="text-amber-400">Modulo 4.4</span>
-    </div>
-  </nav>
-
-  <!-- HEADER -->
-  <header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULO 4.4</span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🧑‍💻 Prompts de Debugging</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">
-        Prompts especializados para investigar e resolver bugs de forma sistematica. Structured Bug Report aprofundado, Log Analysis para extrair significado de logs, stack trace handling e workflows completos de debugging.
-      </p>
-      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">6</div>
-          <div class="text-xs text-neutral-400">Topicos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">30</div>
-          <div class="text-xs text-neutral-400">Minutos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">Interm.</div>
-          <div class="text-xs text-neutral-400">Nivel</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">Pratico</div>
-          <div class="text-xs text-neutral-400">Tipo</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- CONTEUDO -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <!-- TOPICO 1: Structured Bug Report Deep Dive -->
-    <section id="topico-1" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">🐛 Structured Bug Report - Avancado</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-amber-400">Structured Bug Report</strong> avancado adiciona camadas de contexto que aceleram a investigacao. Alem do basico (bug, esperado, atual), voce inclui ambiente, historico de mudancas recentes e hipoteses iniciais.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template Avancado
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Investigue este bug com profundidade total:
+NAVIGATION
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">6P Summary</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://duclub" target="_blank">duclub</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Shortcuts</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Starter Pack</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Workflows</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Prompts</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">MCPs</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+BREADCRUMB
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-amber-400" href="index.html">Track 4</a>
+<span>/</span>
+<span class="text-amber-400">Module 4.4</span>
+</div>
+</nav>
+HEADER
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULE 4.4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧑‍💻 Debugging Prompts</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Specialized prompts to systematically investigate and resolve bugs. In-depth Structured Bug Report, Log Analysis to extract meaning from logs, stack trace handling and complete debugging workflows.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">30</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Interm.</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Practical</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+CONTENT
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+TOPIC 1: Structured Bug Report Deep Dive
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🐛 Structured Bug Report - Advanced</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-amber-400">Structured Bug Report</strong>Advanced adds layers of context that speed up investigation. In addition to the basics (bug, expected, current), you include the environment, history of recent changes and initial hypotheses.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Advanced Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Investigue este bug com profundidade total:
 
 ## Contexto
 - Bug: [descricao precisa]
@@ -127,36 +116,26 @@
 3. Verifique se ha outros lugares no codigo com o mesmo padrao vulneravel
 4. Proponha fix minimo + teste de regressao
 5. Avalie impacto: essa correcao pode quebrar algo?</pre>
-        </div>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          O campo "Ja tentei" e crucial. Ele evita que o Claude sugira solucoes que voce ja sabe que nao funcionam, economizando tempo e tokens. Sempre liste o que ja testou.
-        </p>
-      </div>
-    </section>
-
-    <!-- TOPICO 2: Log Analysis -->
-    <section id="topico-2" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">📊 Log Analysis</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O prompt de <strong class="text-amber-400">Log Analysis</strong> transforma o Claude em um analisador de logs especializado. Ele identifica padroes, anomalias e correlacoes que seriam dificeis de encontrar manualmente em logs extensos.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Analise estes logs e encontre o problema:
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">The "I've tried" field is crucial. It prevents Claude from suggesting solutions that you already know don't work, saving you time and tokens. Always list what you have already tested.</p>
+</div>
+</section>
+TOPIC 2: Log Analysis
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📊 Log Analysis</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">The prompt for<strong class="text-amber-400">Log Analysis</strong>turns Claude into a specialized log analyzer. It identifies patterns, anomalies and correlations that would be difficult to find manually in extensive logs.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Analise estes logs e encontre o problema:
 
 [COLE OS LOGS AQUI]
 
@@ -169,36 +148,27 @@ Preciso que voce:
 6. Proponha a causa raiz baseada na evidencia dos logs
 
 Formato: Timeline com [timestamp] [evento] [normal/anomalo] [significado]</pre>
-        </div>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Para logs muito longos, filtre antes de colar. Use <code class="bg-dark-700 px-2 py-1 rounded text-amber-400">grep -A5 -B5 "ERROR\|WARN"</code> para extrair apenas as linhas relevantes com contexto. O Claude analisa melhor logs focados do que logs gigantes.
-        </p>
-      </div>
-    </section>
-
-    <!-- TOPICO 3: Stack Trace Handling -->
-    <section id="topico-3" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">📚 Stack Trace Handling</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-amber-400">Stack Trace Handling</strong> ensina o Claude a interpretar stack traces de forma eficiente, separando o codigo do seu projeto das bibliotecas externas e identificando exatamente onde o problema esta.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Analise este stack trace:
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">For very long logs, filter before pasting. Use<code class="bg-dark-700 px-2 py-1 rounded text-amber-400" data-notranslate="True">grep -A5 -B5 "ERROR\|WARN"</code>to extract only the relevant lines with context. Claude analyzes focused logs better than giant logs.</p>
+</div>
+</section>
+TOPIC 3: Stack Trace Handling
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📚 Stack Trace Handling</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-amber-400">Stack Trace Handling</strong>teaches Claude how to interpret stack traces efficiently, separating his project's code from external libraries and identifying exactly where the problem is.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Analise este stack trace:
 
 [COLE O STACK TRACE]
 
@@ -210,36 +180,27 @@ Formato: Timeline com [timestamp] [evento] [normal/anomalo] [significado]</pre>
 6. Proponha a correcao minima
 
 Foque apenas no nosso codigo - ignore frames de node_modules/stdlib.</pre>
-        </div>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Sempre cole o stack trace completo, nao apenas a mensagem de erro. Os frames intermediarios muitas vezes contem a pista mais importante - especialmente em erros de callback e promises.
-        </p>
-      </div>
-    </section>
-
-    <!-- TOPICO 4: Error Categorization -->
-    <section id="topico-4" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">🏷️ Categorizacao de Erros</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        A <strong class="text-amber-400">categorizacao de erros</strong> e um prompt que organiza multiplos erros por tipo, prioridade e relacao entre eles. Ideal para quando voce tem varios bugs simultaneos e precisa saber por onde comecar.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Estou vendo multiplos erros. Categorize e priorize:
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Always paste the complete stack trace, not just the error message. The intermediate frames often contain the most important clue - especially in callback and promise errors.</p>
+</div>
+</section>
+TOPIC 4: Error Categorization
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🏷️ Error Categorization</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        A <strong class="text-amber-400">error categorization</strong>is a prompt that organizes multiple errors by type, priority and relationship between them. Ideal for when you have several simultaneous bugs and need to know where to start.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Estou vendo multiplos erros. Categorize e priorize:
 
 [COLE TODOS OS ERROS/LOGS]
 
@@ -250,36 +211,27 @@ Para cada erro:
 4. Ordem de resolucao: Qual resolver primeiro?
 
 Identifique se ha um erro RAIZ que, ao ser resolvido, corrige os outros em cascata.</pre>
-        </div>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Erros em cascata sao extremamente comuns. Um erro de configuracao pode gerar 10 erros de runtime diferentes. Sempre resolva o erro raiz primeiro - muitas vezes, 80% dos erros desaparecem sozinhos.
-        </p>
-      </div>
-    </section>
-
-    <!-- TOPICO 5: Root Cause Analysis -->
-    <section id="topico-5" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">🔬 Root Cause Analysis</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-amber-400">Root Cause Analysis</strong> forca o Claude a ir alem da correcao superficial e encontrar por que o bug existe em primeiro lugar. Isso previne que o mesmo tipo de bug apareca novamente em outro lugar do codigo.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Faca uma analise de causa raiz completa usando os 5 Porques:
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Cascading errors are extremely common. A configuration error can generate 10 different runtime errors. Always resolve the root error first - often 80% of errors go away on their own.</p>
+</div>
+</section>
+TOPIC 5: Root Cause Analysis
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔬 Root Cause Analysis</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-amber-400">Root Cause Analysis</strong>forces Claude to go beyond the superficial fix and find out why the bug exists in the first place. This prevents the same type of bug from appearing again elsewhere in the code.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Faca uma analise de causa raiz completa usando os 5 Porques:
 
 Bug: [descricao]
 
@@ -294,124 +246,106 @@ Depois:
 - Existe esse mesmo padrao em outros lugares do codigo?
 - Que mudanca SISTEMICA preveniria esse tipo de bug?
 - Que regra podemos adicionar ao CLAUDE.md para evitar?</pre>
-        </div>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Apos encontrar a causa raiz, adicione a prevencao ao <code class="bg-dark-700 px-2 py-1 rounded text-amber-400">CLAUDE.md</code>. Exemplo: se o bug foi causado por falta de validacao de input, adicione: "Sempre valide inputs antes de processar. Nunca assuma que dados externos sao validos."
-        </p>
-      </div>
-    </section>
-
-    <!-- TOPICO 6: Debugging Workflow Completo -->
-    <section id="topico-6" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">🔄 Workflow Completo de Debugging</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-amber-400">workflow completo de debugging</strong> combina todos os prompts anteriores em uma sequencia logica. Siga essa ordem para resolver qualquer bug de forma sistematica, do mais simples ao mais complexo.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Sequencia de Debugging
-        </h3>
-        <div class="space-y-4 text-neutral-300">
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">1</span>
-            <div><strong class="text-white">Categorize</strong> - Se multiplos erros, categorize e encontre o raiz</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">2</span>
-            <div><strong class="text-white">Analise logs/stack</strong> - Use Log Analysis ou Stack Trace conforme o caso</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">3</span>
-            <div><strong class="text-white">Bug Report</strong> - Documente o bug com o template estruturado</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">4</span>
-            <div><strong class="text-white">Root Cause</strong> - 5 Porques para encontrar a causa raiz real</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">5</span>
-            <div><strong class="text-white">Fix + Test</strong> - Correcao minima com teste de regressao</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">6</span>
-            <div><strong class="text-white">Prevencao</strong> - Atualize CLAUDE.md para prevenir recorrencia</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Para bugs simples, pule direto para o passo 3 (Bug Report). A sequencia completa e para bugs complexos ou intermitentes que resistem a correcoes superficiais. Sempre termine com prevencao - o melhor debug e o que nunca precisa acontecer de novo.
-        </p>
-      </div>
-    </section>
-
-    <!-- RESUMO FINAL -->
-    <section class="mb-12">
-      <div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
-        <h2 class="text-2xl font-bold mb-6 flex items-center">
-          <span class="mr-3">📋</span> Resumo do Modulo
-        </h2>
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Bug Report avancado</strong><span class="text-neutral-400"> - Ambiente, historico, hipoteses e "ja tentei" aceleram a investigacao</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Log Analysis</strong><span class="text-neutral-400"> - Timeline de eventos, separando normal de anomalo</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Stack Trace</strong><span class="text-neutral-400"> - Foque no seu codigo, ignore frames de bibliotecas externas</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Categorizacao</strong><span class="text-neutral-400"> - Multiplos erros? Encontre o raiz que resolve os outros em cascata</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">5 Porques</strong><span class="text-neutral-400"> - Va fundo na causa raiz, previna recorrencia no CLAUDE.md</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Workflow completo</strong><span class="text-neutral-400"> - Categorize → Analise → Reporte → Cause → Fix → Previna</span></div>
-          </div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-          <h3 class="font-semibold text-amber-400 mb-2">Proximo Modulo:</h3>
-          <p class="text-neutral-300">4.5 - Prompts de Code Quality</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="modulo-4-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Modulo Anterior</a>
-          <a href="modulo-4-5.html" class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors">Proximo Modulo →</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>6 Pilares do Claude Code Resumido - 2026 | <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-
-  <script>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">After finding the root cause, add prevention to the<code class="bg-dark-700 px-2 py-1 rounded text-amber-400" data-notranslate="True">CLAUDE.md</code>. Example: If the bug was caused by a lack of input validation, add: "Always validate inputs before processing. Never assume that external data is valid."</p>
+</div>
+</section>
+TOPIC 6: Complete Debugging Workflow
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔄 Complete Debugging Workflow</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-amber-400">complete debugging workflow</strong>combines all previous prompts into a logical sequence. Follow this order to resolve any bug systematically, from the simplest to the most complex.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Debugging sequence</h3>
+<div class="space-y-4 text-neutral-300">
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">1</span>
+<div><strong class="text-white">Categorize</strong>- If multiple errors, categorize and find the root</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">2</span>
+<div><strong class="text-white">Analyze logs/stack</strong>- Use Log Analysis or Stack Trace as appropriate</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">3</span>
+<div><strong class="text-white">Bug Report</strong>- Document the bug with the structured template</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">4</span>
+<div><strong class="text-white">Root Cause</strong>- 5 Whys to find the real root cause</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">5</span>
+<div><strong class="text-white">Fix + Test</strong>- Minimum correction with regression test</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">6</span>
+<div><strong class="text-white">Prevention</strong>- Update CLAUDE.md to prevent recurrence</div>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">For simple bugs, skip straight to step 3 (Bug Report). The full sequence is for complex or intermittent bugs that resist superficial fixes. Always end with prevention - the best debug is what never needs to happen again.</p>
+</div>
+</section>
+FINAL SUMMARY
+<section class="mb-12">
+<div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center">
+<span class="mr-3">📋</span>Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Advanced Bug Report</strong><span class="text-neutral-400">- Environment, history, hypotheses and "I've tried" speed up the investigation</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Log Analysis</strong><span class="text-neutral-400">- Timeline of events, separating normal from abnormal</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Stack Trace</strong><span class="text-neutral-400">- Focus on your code, ignore frames from external libraries</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Categorization</strong><span class="text-neutral-400">- Multiple errors? Find the root that resolves the others in cascade</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">5 Whys</strong><span class="text-neutral-400">- Go deep into the root cause, prevent recurrence on CLAUDE.md</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Complete workflow</strong><span class="text-neutral-400">- Categorize → Analyze → Report → Cause → Fix → Prevent</span></div>
+</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-amber-400 mb-2">Next Module:</h3>
+<p class="text-neutral-300">4.5 - Code Quality Prompts</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-4-3.html">← Previous Module</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="modulo-4-5.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>6 Pillars of the Claude Code Summarized - 2026 |<a class="text-sky-400 hover:text-sky-300" href="https://duclub" target="_blank">duclub</a></p>
+</div>
+</footer>
+<script data-notranslate="True">
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -425,6 +359,5 @@ Depois:
     });
     function toggleTopic(id) { const el = document.getElementById(id); if (el) el.classList.toggle('active'); }
   </script>
-
 </body>
 </html>
