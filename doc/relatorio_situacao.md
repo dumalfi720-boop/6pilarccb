@@ -1,16 +1,14 @@
-# RELATORIO DE SITUACAO - 6 Pilares do Claude Code (Edicao Basica)
+# SITUATION REPORT - 6 Pillars of the Claude Code (Basic Edition)
 
-**Projeto:** 6pilarcc (6pilarccb)
-**Repositorio:** https://github.com/inematds/6pilarccb
+**Project:** 6pilarcc (6pilarccb)
+**Repository:** https://github.com/inematds/6pilarccb
 **GitHub Pages:** https://inematds.github.io/6pilarccb/
-**Data:** 2026-03-07
-**Status Geral:** Trilha 1 COMPLETA | Trilhas 2-6 em espera
+**Date:** 2026-03-07
+**General Status:** Trail 1 COMPLETE | Tracks 2-6 on hold
 
 ---
 
-## ESTRUTURA DE ARQUIVOS
-
-```
+## FILE STRUCTURE```
 6pilarcc/
   index.html                         (pagina principal - 6 trilhas)
   doc/
@@ -23,84 +21,78 @@
       modulo-1-3.html                (Flags de Linha de Comando)
       modulo-1-4.html                (Pipe de Dados)
       modulo-1-5.html                (Atalhos de Teclado e Aliases)
-```
-
-**Total:** 7 arquivos HTML | 3 commits | Branch: main
+```**Total:** 7 HTML files | 3 commits | Branch: main
 
 ---
 
-## TRILHAS - STATUS
+## TRAILS - STATUS
 
-| Trilha | Nome | Cor | Status | Modulos | Link |
+| Trail | Name | Color | Status | Modules | Link |
 |--------|------|-----|--------|---------|------|
-| T1 | Atalhos do Claude | Emerald | COMPLETA | 5/5 | curso/trilha1/index.html |
-| T2 | Starter Pack | Blue | Em breve | 0 | # (placeholder) |
-| T3 | Workflows | Purple | Em breve | 0 | # (placeholder) |
-| T4 | Prompts | Amber | Em breve | 0 | # (placeholder) |
-| T5 | Skills | Teal | Em breve | 0 | # (placeholder) |
-| T6 | MCPs | Rose | Em breve | 0 | # (placeholder) |
+| T1 | Claude's Shortcuts | Emerald | COMPLETE | 5/5 | course/trail1/index.html |
+| T2 | Starter Pack | Blue | Coming soon | 0 | # (placeholder) |
+| T3 | Workflows | Purple | Coming soon | 0 | # (placeholder) |
+| T4 | Prompts | Amber | Coming soon | 0 | # (placeholder) |
+| T5 | Skills | Teal | Coming soon | 0 | # (placeholder) |
+| T6 | MCPs | Rose | Coming soon | 0 | # (placeholder) |
 
 ---
 
-## TRILHA 1 - DETALHAMENTO
+## TRAIL 1 - DETAILS
 
-| Modulo | Titulo | Topicos | Exercicios | Links | Status |
+| Module | Title | Topics | Exercises | Links | Status |
 |--------|--------|---------|------------|-------|--------|
-| 1.1 | Comandos Essenciais do Terminal | 6 (Help, Clear, Compact, Cost, Status, Combinando) | Sim | OK | COMPLETO |
-| 1.2 | Slash Commands Nativos | 6 (Commit, Review, PR, Init, Doctor, Fluxo Completo) | Sim | OK | COMPLETO |
-| 1.3 | Flags de Linha de Comando | 6 (-p, --model, --resume, --allowedTools, --output-format, Combinando) | Sim | OK | COMPLETO |
-| 1.4 | Pipe de Dados | 6 (cat pipe, Logs, Multiplos, Redirecionamento, Unix, Avancados) | Sim | OK | COMPLETO |
-| 1.5 | Atalhos e Aliases | 6 (Navegacao, Edicao, Execucao, Historico, Multi-line, Aliases) | Sim | OK | COMPLETO |
+| 1.1 | Essential Terminal Commands | 6 (Help, Clear, Compact, Cost, Status, Combining) | Yes | OK | COMPLETE |
+| 1.2 | Native Slash Commands | 6 (Commit, Review, PR, Init, Doctor, Full Flow) | Yes | OK | COMPLETE |
+| 1.3 | Command Line Flags | 6 (-p, --model, --resume, --allowedTools, --output-format, Combining) | Yes | OK | COMPLETE |
+| 1.4 | Data Pipe | 6 (cat pipe, Logs, Multiples, Redirection, Unix, Advanced) | Yes | OK | COMPLETE |
+| 1.5 | Shortcuts and Aliases | 6 (Navigation, Editing, Execution, History, Multi-line, Aliases) | Yes | OK | COMPLETE |
 
-**Total:** 30 topicos documentados | 5 exercicios praticos
+**Total:** 30 documented topics | 5 practical exercises
 
 ---
 
-## VERIFICACAO DE LINKS
+## LINK CHECK
 
-### Links Funcionais
-- Todas as navegacoes entre modulos (anterior/proximo)
-- Todos os breadcrumbs (voltar ao inicio, voltar a trilha)
-- Todos os modais com iframes (5 modais apontando para modulo-1-X.html)
-- Links externos (INEMA.CLUB)
-- Ancoras internas (#mod-1-1 ate #mod-1-5)
+### Functional Links
+- All navigation between modules (previous/next)
+- All breadcrumbs (back to start, back to track)
+- All modals with iframes (5 modals pointing to module-1-X.html)
+- External links (duclub)
+- Internal anchors (#mod-1-1 to #mod-1-5)
 
 ### Links Placeholder (#)
-- Trilhas 2-6 na navbar de todas as paginas
-- Botao "Proxima Trilha" no modulo 1.5
-- Cards de trilhas 2-6 na pagina principal
+- Tracks 2-6 in the navbar of all pages
+- "Next Track" button in module 1.5
+- Track cards 2-6 on the main page
 
-**Resultado: NENHUM link quebrado. Placeholders sao intencionais.**
-
----
-
-## QUALIDADE TECNICA
-
-- Tailwind CSS via CDN com config de cores customizadas
-- Modo dark/light com toggle e localStorage
-- Fonte Inter (Google Fonts)
-- Responsivo (mobile/tablet/desktop)
-- Topicos expansiveis com toggle JS
-- Modais com iframe para preview de modulos
-- Navegacao sticky com backdrop-blur
-- Cores consistentes: Emerald (T1), Primary Yellow (#FACC15), Sky (INEMA.CLUB)
+**Result: NO broken links. Placeholders are intentional.**
 
 ---
 
-## GIT - HISTORICO
+## TECHNICAL QUALITY
 
-```
+- Tailwind CSS via CDN with custom color config
+- Dark/light mode with toggle and localStorage
+- Inter Font (Google Fonts)
+- Responsive (mobile/tablet/desktop)
+- Expandable topics with JS toggle
+- Modals with iframe for module preview
+- Sticky navigation with backdrop-blur
+- Consistent colors: Emerald (T1), Primary Yellow (#FACC15), Sky (duclub)
+
+---
+
+## GIT - HISTORY```
 cbf74a2 feat: modulos 1.2 a 1.5 completos da Trilha 1
 0c19dc4 feat: pagina completa do Modulo 1.1 - Comandos Essenciais
-0d67cee feat: pagina principal + trilha 1 (Atalhos do Claude) no formato INEMA.CLUB
-```
-
-**Remote:** git@github.com:inematds/6pilarccb.git (SSH)
+0d67cee feat: pagina principal + trilha 1 (Atalhos do Claude) no formato duclub
+```**Remote:** git@github.com:inematds/6pilarccb.git (SSH)
 
 ---
 
-## CONCLUSAO
+## CONCLUSION
 
-O projeto 6pilarccb esta **funcional e completo para a Trilha 1**. A edicao basica cobre os fundamentos do Claude Code com 5 modulos e 30 topicos. As trilhas 2-6 estao planejadas mas nao foram implementadas nesta versao basica.
+The 6pilarccb project is **functional and complete for Trail 1**. The basic edition covers the fundamentals of the Claude Code with 5 modules and 30 topics. Tracks 2-6 are planned but not implemented in this basic version.
 
-A versao completa (6pilarccfull) esta sendo desenvolvida separadamente com 6 trilhas, 49 modulos e 294 topicos.
+The full version (6pilarccfull) is being developed separately with 6 tracks, 49 modules and 294 topics.
