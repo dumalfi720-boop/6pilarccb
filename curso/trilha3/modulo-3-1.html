@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+html
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo 3.1 - Corrigir um Bug | 6 Pilares do Claude Code Resumido</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 3.1 - Fix a Bug | 6 Pillars of the Claude Code Summarized</title>
+<script data-notranslate="True" src="https://cdn.tailwindcss.com"></script>
+<script data-notranslate="True">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-notranslate="True">
     body { font-family: 'Inter', sans-serif; } .dark body { background-color: #111827; }
     .topic-explanation { display: none; } .topic-explanation.active { display: block; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -19,210 +19,198 @@
   </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">6P Resumido</span></a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Atalhos</span></a>
-          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Starter Pack</span></a>
-          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Workflows</span></a>
-          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Prompts</span></a>
-          <a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Skills</span></a>
-          <a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">MCPs</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../../index.html" class="hover:text-purple-400">Inicio</a><span>/</span>
-      <a href="index.html" class="hover:text-purple-400">Trilha 3</a><span>/</span>
-      <span class="text-purple-400">Modulo 3.1</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MODULO 3.1</span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">👾 Corrigir um Bug</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">O workflow completo para encontrar, diagnosticar e corrigir bugs usando o Claude Code como seu parceiro de debugging.</p>
-      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Topicos</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">20</div><div class="text-xs text-neutral-400">Minutos</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Nivel</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Pratico</div><div class="text-xs text-neutral-400">Tipo</div></div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <section id="topico-1" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">🔍 Dar Contexto ao Claude</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">O primeiro passo para corrigir um bug e <strong class="text-purple-400">dar contexto suficiente</strong> para o Claude entender o problema. Quanto mais informacao voce fornecer, mais rapido ele encontra a solucao.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Descreva o bug com clareza, incluindo o comportamento esperado vs. o comportamento atual. Use comandos como:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">claude "O botao de login retorna erro 403 ao clicar. Deveria redirecionar para /dashboard"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Inclua mensagens de erro exatas, stack traces e logs relevantes</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Mencione quando o bug comecou (ex: "depois do ultimo deploy") para ajudar a isolar a causa</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Cole o erro diretamente no prompt: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">claude "Este erro aparece no console: TypeError: Cannot read property 'map' of undefined em UserList.jsx:42"</code></p>
-      </div>
-    </section>
-
-    <section id="topico-2" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">🕵️ Investigacao</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Deixe o Claude <strong class="text-purple-400">investigar o codebase</strong> para entender o contexto completo do bug. Ele vai ler arquivos, seguir imports e rastrear o fluxo de dados.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">O Claude vai automaticamente explorar arquivos relacionados. Voce pode guiar a investigacao:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Investigue o fluxo de autenticacao em src/auth/ para encontrar onde o 403 e gerado"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Verifique os middlewares que interceptam requests para /api/login"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>O Claude usa grep, leitura de arquivos e analise de dependencias para mapear o problema</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Se o Claude pedir permissao para ler muitos arquivos, aceite. Uma investigacao ampla no inicio economiza tempo depois. Use <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">Shift+Tab</code> para aceitar todas as permissoes de uma vez.</p>
-      </div>
-    </section>
-
-    <section id="topico-3" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">🩺 Diagnostico</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Apos a investigacao, o Claude vai apresentar seu <strong class="text-purple-400">diagnostico com a causa raiz</strong>. E importante validar esse diagnostico antes de partir para a correcao.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Valide o diagnostico fazendo perguntas de follow-up:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Tem certeza que o problema e no middleware e nao no controller?"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Existem outros lugares onde esse mesmo padrao pode causar bugs?"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Peca para o Claude explicar a cadeia de eventos que leva ao bug</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Peca ao Claude: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Antes de corrigir, me explique passo a passo como o bug acontece"</code>. Isso garante que voce entende o problema e pode validar a solucao.</p>
-      </div>
-    </section>
-
-    <section id="topico-4" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">🔧 Aplicar a Correcao</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Com o diagnostico confirmado, peca ao Claude para <strong class="text-purple-400">implementar a correcao</strong>. Ele vai editar os arquivos necessarios e voce pode revisar cada mudanca.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Guie a correcao com instrucoes claras:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Corrija o bug. Adicione validacao de null antes do .map() e um fallback para array vazio"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Revise o diff que o Claude mostra antes de aceitar - pressione <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">y</code> para aceitar ou <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">n</code> para rejeitar</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Peca para rodar os testes: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Rode npm test para garantir que nada quebrou"</code></span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Sempre peca para rodar testes apos a correcao: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Rode os testes relacionados e me mostre se passam"</code>. Isso evita que a correcao quebre outra coisa.</p>
-      </div>
-    </section>
-
-    <section id="topico-5" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">📝 Commit da Correcao</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Com o bug corrigido e testes passando, use o <strong class="text-purple-400">comando /commit</strong> para criar um commit limpo e descritivo automaticamente.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">O Claude gera commits seguindo convencoes do projeto:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Digite <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">/commit</code> - o Claude analisa as mudancas e cria uma mensagem de commit</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Ele segue o padrao Conventional Commits: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">fix: resolve null pointer in UserList component</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Voce pode pedir ajustes na mensagem antes de confirmar</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Se preferir mais controle, use: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Faca commit com a mensagem: fix: add null check before mapping users array"</code>. O Claude executa o git add e git commit para voce.</p>
-      </div>
-    </section>
-
-    <section id="topico-6" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">🚀 Pro Tips</h2>
-      </div>
-      <p class="text-neutral-300 mb-6 leading-relaxed">Dicas avancadas para <strong class="text-purple-400">acelerar o debugging</strong> e resolver bugs mais complexos com eficiencia.</p>
-      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
-        <p class="text-neutral-300 mb-4">Tecnicas avancadas para debugging eficiente:</p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Pipe de logs direto: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">cat error.log | claude -p "Analise esses logs e encontre a causa do crash"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Bug em producao: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"O Sentry mostra este erro em producao: [stack trace]. Encontre e corrija"</code></span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Use <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">/compact</code> se a conversa ficar longa durante o debugging para manter o contexto limpo</span></li>
-        </ul>
-      </div>
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Dica Pratica</h3>
-        <p class="text-neutral-300">Para bugs intermitentes, peca: <code class="bg-dark-700 px-2 py-0.5 rounded text-sm">"Adicione logs temporarios nos pontos criticos para capturar o estado quando o bug ocorre"</code>. Depois de reproduzir, envie os logs ao Claude.</p>
-      </div>
-    </section>
-
-    <section class="mb-12">
-      <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
-        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📋</span> Resumo do Modulo</h2>
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Contexto</strong><span class="text-neutral-400"> - Descreva o bug com erro exato, comportamento esperado e atual</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Investigacao</strong><span class="text-neutral-400"> - Deixe o Claude explorar arquivos e rastrear o fluxo</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Diagnostico</strong><span class="text-neutral-400"> - Valide a causa raiz antes de corrigir</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Correcao</strong><span class="text-neutral-400"> - Implemente o fix e revise o diff</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Commit</strong><span class="text-neutral-400"> - Use /commit para gerar mensagem descritiva</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Pro Tips</strong><span class="text-neutral-400"> - Pipe de logs, /compact e debugging avancado</span></div></div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-          <h3 class="font-semibold text-purple-400 mb-2">Proximo Modulo:</h3>
-          <p class="text-neutral-300">3.2 - Construir Feature Nova</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar</a>
-          <a href="modulo-3-2.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Proximo Modulo →</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>6 Pilares do Claude Code Resumido - 2026 | <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-
-  <script>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">6P Summary</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://duclub" target="_blank">duclub</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Shortcuts</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Starter Pack</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Workflows</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Prompts</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">MCPs</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-purple-400" href="index.html">Track 3</a><span>/</span>
+<span class="text-purple-400">Module 3.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MODULE 3.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">👾 Fix a Bug</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The complete workflow for finding, diagnosing, and fixing bugs using Claude Code as your debugging partner.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">20</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Practical</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🔍 Give Context to Claude</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">The first step to fixing a bug and<strong class="text-purple-400">give enough context</strong>for Claude to understand the problem. The more information you provide, the faster it finds the solution.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Describe the bug clearly, including expected behavior vs. the current behavior. Use commands like:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">claude "O botao de login retorna erro 403 ao clicar. Deveria redirecionar para /dashboard"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Include accurate error messages, stack traces and relevant logs</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Mention when the bug started (e.g. "after the last deploy") to help isolate the cause</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">Paste the error directly into the prompt:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">claude "Este erro aparece no console: TypeError: Cannot read property 'map' of undefined em UserList.jsx:42"</code></p>
+</div>
+</section>
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🕵️ Investigation</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Leave Claude<strong class="text-purple-400">investigate the codebase</strong>to understand the full context of the bug. It will read files, follow imports and track the data flow.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Claude will automatically explore related files. You can guide the investigation:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Investigue o fluxo de autenticacao em src/auth/ para encontrar onde o 403 e gerado"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Verifique os middlewares que interceptam requests para /api/login"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Claude uses grep, file reading and dependency analysis to map the problem</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">If Claude asks for permission to read many files, accept. A thorough investigation at the beginning saves time later. Use<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">Shift+Tab</code>to accept all permissions at once.</p>
+</div>
+</section>
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🩺 Diagnosis</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">After the investigation, Claude will present his<strong class="text-purple-400">diagnosis with the root cause</strong>. It is important to validate this diagnosis before proceeding with corrections.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Validate the diagnosis by asking follow-up questions:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Tem certeza que o problema e no middleware e nao no controller?"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Existem outros lugares onde esse mesmo padrao pode causar bugs?"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Ask Claude to explain the chain of events that leads to the bug</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">Ask Claude:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Antes de corrigir, me explique passo a passo como o bug acontece"</code>. This ensures that you understand the problem and can validate the solution.</p>
+</div>
+</section>
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔧 Apply the Correction</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">With the diagnosis confirmed, ask Claude to<strong class="text-purple-400">implement the correction</strong>. It will edit the necessary files and you can review each change.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Guide the correction with clear instructions:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Corrija o bug. Adicione validacao de null antes do .map() e um fallback para array vazio"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Review the diff that Claude shows before accepting - press<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">y</code>to accept or<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">n</code>to reject</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Ask to run the tests:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Rode npm test para garantir que nada quebrou"</code></span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">Always ask to run tests after the correction:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Rode os testes relacionados e me mostre se passam"</code>. This prevents the fix from breaking something else.</p>
+</div>
+</section>
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📝 Correction Commit</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">With the bug fixed and tests passing, use the<strong class="text-purple-400">/commit command</strong>to create a clean and descriptive commit automatically.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Claude generates commits following project conventions:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Enter<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">/commit</code>- Claude analyzes the changes and creates a commit message</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>It follows the Conventional Commits pattern:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">fix: resolve null pointer in UserList component</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>You can request adjustments to the message before confirming</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">If you prefer more control, use:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Faca commit com a mensagem: fix: add null check before mapping users array"</code>. Claude runs git add and git commit for you.</p>
+</div>
+</section>
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🚀 Pro Tips</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Advanced tips for<strong class="text-purple-400">speed up debugging</strong>and resolve more complex bugs efficiently.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💡</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Advanced techniques for efficient debugging:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Direct log pipe:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">cat error.log | claude -p "Analise esses logs e encontre a causa do crash"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Bug in production:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"O Sentry mostra este erro em producao: [stack trace]. Encontre e corrija"</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span>Use<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">/compact</code>if the conversation gets long during debugging to keep the context clean</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span>Practical Tip</h3>
+<p class="text-neutral-300">For intermittent bugs, ask:<code class="bg-dark-700 px-2 py-0.5 rounded text-sm" data-notranslate="True">"Adicione logs temporarios nos pontos criticos para capturar o estado quando o bug ocorre"</code>. After reproducing, send the logs to Claude.</p>
+</div>
+</section>
+<section class="mb-12">
+<div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📋</span>Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Context</strong><span class="text-neutral-400">- Describe the bug with exact error, expected and current behavior</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Investigation</strong><span class="text-neutral-400">- Let Claude explore files and track the flow</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Diagnosis</strong><span class="text-neutral-400">- Validate the root cause before fixing</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Correction</strong><span class="text-neutral-400">- Implement the fix and review the diff</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Commit</strong><span class="text-neutral-400">- Use /commit to generate descriptive message</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Pro Tips</strong><span class="text-neutral-400">- Log pipe, /compact and advanced debugging</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-purple-400 mb-2">Next Module:</h3>
+<p class="text-neutral-300">3.2 - Build New Feature</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-2.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>6 Pillars of the Claude Code Summarized - 2026 |<a class="text-sky-400 hover:text-sky-300" href="https://duclub" target="_blank">duclub</a></p>
+</div>
+</footer>
+<script data-notranslate="True">
     function toggleTopic(button) { const t=button.closest('.topic-item'); const e=t.querySelector('.topic-explanation'); const m=button.closest('.bg-dark-800'); m.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==e)x.classList.remove('active')}); e.classList.toggle('active'); }
     const themeToggle=document.getElementById('theme-toggle'); const themeToggleDarkIcon=document.getElementById('theme-toggle-dark-icon'); const themeToggleLightIcon=document.getElementById('theme-toggle-light-icon'); const html=document.documentElement;
     if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!html.classList.contains('dark'))){themeToggleDarkIcon.classList.remove('hidden');html.classList.remove('dark');}else{themeToggleLightIcon.classList.remove('hidden');}
