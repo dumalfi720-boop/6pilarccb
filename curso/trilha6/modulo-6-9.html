@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+html
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo 6.9 - Estrategia de Rotacao Ativa | 6 Pilares do Claude Code Resumido</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 6.9 - Active Rotation Strategy | 6 Pillars of the Claude Code Summarized</title>
+<script data-notranslate="True" src="https://cdn.tailwindcss.com"></script>
+<script data-notranslate="True">tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-notranslate="True">
     body{font-family:'Inter',sans-serif}.dark body{background-color:#111827}
     .topic-explanation{display:none}.topic-explanation.active{display:block}
     html:not(.dark) body{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 50%,#f1f5f9 100%)}
@@ -19,758 +19,670 @@
   </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">6P Resumido</span>
-          </a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
-            <span class="sm:hidden">T1</span>
-            <span class="hidden sm:inline">Atalhos</span>
-          </a>
-          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
-            <span class="sm:hidden">T2</span>
-            <span class="hidden sm:inline">Starter Pack</span>
-          </a>
-          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
-            <span class="sm:hidden">T3</span>
-            <span class="hidden sm:inline">Workflows</span>
-          </a>
-          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors">
-            <span class="sm:hidden">T4</span>
-            <span class="hidden sm:inline">Prompts</span>
-          </a>
-          <a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors">
-            <span class="sm:hidden">T5</span>
-            <span class="hidden sm:inline">Skills</span>
-          </a>
-          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10">
-            <span class="sm:hidden">T6</span>
-            <span class="hidden sm:inline">MCPs</span>
-          </a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- BREADCRUMB -->
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../../index.html" class="hover:text-rose-400">Inicio</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-rose-400">Trilha 6</a>
-      <span>/</span>
-      <span class="text-rose-400">Modulo 6.9</span>
-    </div>
-  </nav>
-
-  <!-- HEADER -->
-  <header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">
-        MODULO 6.9
-      </span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🔄 Estrategia de Rotacao Ativa</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">
-        Aprenda a rotacionar MCPs conforme a fase do trabalho. Building, UI, backend, scraping e code review - cada fase tem sua configuracao ideal. A mentalidade do operador profissional.
-      </p>
-
-      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-rose-400">6</div>
-          <div class="text-xs text-neutral-400">Topicos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-rose-400">12</div>
-          <div class="text-xs text-neutral-400">Minutos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-rose-400">Avancado</div>
-          <div class="text-xs text-neutral-400">Nivel</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-rose-400">Estrategia</div>
-          <div class="text-xs text-neutral-400">Tipo</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- CONTEUDO -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <!-- TOPICO 1 -->
-    <section id="topico-1" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">🏗️ Modo Building: Filesystem + GitHub</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Configuracao Para Construir Features
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Quando voce esta construindo features novas, a prioridade e maximo contexto para codigo. Mantenha apenas Filesystem (acesso cross-repo) e GitHub (para ler issues com requisitos). Desconecte Browser e Database - voce nao precisa de web ou dados ao vivo para codar.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>MCPs ativos:</strong> Filesystem (~500) + GitHub (~2.000) = ~2.500 tokens overhead</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Contexto livre:</strong> ~197.500 tokens disponiveis para codigo e instrucoes</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Workflow:</strong> Leia issue → Implemente → Crie PR → Linke issue</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Otimizacao:</strong> Desconecte GitHub apos ler a issue se a sessao sera longa</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Por Que Este Setup
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>Building precisa de maximo espaco para codigo e instrucoes complexas</li>
-          <li>GitHub so e necessario para buscar requirements (issues) e criar PRs</li>
-          <li>Browser e Database sao irrelevantes para construir codigo puro</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Workflow otimizado: 1) Conecte GitHub. 2) 'Leia issue #42 e resuma os requisitos'. 3) Desconecte GitHub (mcp remove github). 4) Code com apenas Filesystem. 5) Reconecte GitHub. 6) 'Crie PR com essas mudancas linkando issue #42'. 7) Desconecte. Overhead medio: muito menor que manter GitHub ligado o tempo todo.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Manter overhead abaixo de 3.000 tokens para building</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Desconectar GitHub entre ler issue e criar PR</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Maximizar contexto para codigo</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Manter Browser ligado durante coding</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Manter Database ligado sem necessidade</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Conectar MCPs 'por precaucao'</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 2 -->
-    <section id="topico-2" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">🎨 Modo UI/Design: Filesystem + Browser</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Configuracao Para Trabalho Visual
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Quando trabalhando em UI, o Claude precisa VER o resultado. Browser MCP e essencial aqui mas e o mais caro. Aceite o overhead alto (~5.500 tokens) porque a verificacao visual e insubstituivel para UI.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>MCPs ativos:</strong> Filesystem (~500) + Browser (~5.000) = ~5.500 tokens overhead</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Contexto livre:</strong> ~194.500 tokens - menos, mas suficiente</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Workflow:</strong> Code → Screenshot → Ajuste → Screenshot → Approve</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Cuidado:</strong> Cada screenshot consome 5.000-15.000 tokens extras!</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> O Trade-off Necessario
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>UI sem verificacao visual e coding as cegas</li>
-          <li>O overhead alto do Browser e justificavel aqui (unico caso de uso)</li>
-          <li>Minimize screenshots: peca get_text quando nao precisa VER visualmente</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Para UI, use um fluxo de verificacao eficiente: 1) Code o componente. 2) 'Navegue para localhost:3000/pagina e tire screenshot'. 3) 'Ajuste o padding do header e o tamanho da fonte'. 4) 'Tire screenshot novamente para confirmar'. Limite a 2-3 screenshots por ciclo. Mais que isso e desperdicar tokens.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Aceitar o overhead alto do Browser para tarefas UI</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Limitar screenshots a 2-3 por ciclo de ajuste</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Usar get_text para verificacoes nao-visuais</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Pedir screenshots a cada mudanca minima</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Manter Browser ligado apos fase de UI</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Fazer mais de 3-4 ciclos screenshot sem pausa</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 3 -->
-    <section id="topico-3" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">⚙️ Modo Backend/Data: Filesystem + Database</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Configuracao Para Backend e Dados
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Quando trabalhando com backend e dados, conecte Database MCP para acesso direto ao banco. O Claude pode explorar schemas, validar queries e debugar problemas de dados em tempo real.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>MCPs ativos:</strong> Filesystem (~500) + Database (~1.500) = ~2.000 tokens overhead</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Contexto livre:</strong> ~198.000 tokens - excelente para codigo backend</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Workflow:</strong> Explore schema → Escreva query → Valide → Implemente no codigo</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Cuidado:</strong> Use LIMIT em queries! Dados retornados consomem tokens extras</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Backend Com Dados Reais
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>Claude escreve SQL baseado no schema REAL, nao em suposicoes</li>
-          <li>Debug de dados ao vivo: veja os problemas acontecendo</li>
-          <li>Migrations mais precisas: baseadas no estado atual do banco</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Comece toda sessao de backend com: 'liste todas as tabelas do banco e descreva as que vou trabalhar hoje: [tabela1, tabela2]'. Isso da ao Claude contexto do schema real com custo minimo. A partir dai, queries e migrations serao muito mais precisas.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Comecar com exploracao de schema</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Usar LIMIT em toda query</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Desconectar Database quando terminar com dados</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>SELECT * sem LIMIT em tabelas grandes</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Conectar Database durante coding de frontend</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Executar DDL sem revisar cuidadosamente</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 4 -->
-    <section id="topico-4" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">🕷️ Modo Lead Scraping: Browser + Sheets</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Configuracao Para Coleta de Dados
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Para lead scraping e coleta de dados da web, combine Browser (navegar e extrair) com Google Sheets (armazenar resultados). E o setup mais caro mas com alto valor de output para equipes de vendas e marketing.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>MCPs ativos:</strong> Filesystem (~500) + Browser (~5.000) + Sheets (~800) = ~6.300 tokens overhead</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Contexto livre:</strong> ~193.700 tokens - apertado mas funcional</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Workflow:</strong> Navegue diretorio → Extraia dados → Salve na planilha → Repita</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Nota:</strong> Este e o setup mais pesado - use apenas quando necessario</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Alto Custo, Alto Valor
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>6.300 tokens de overhead e alto, mas o output justifica</li>
-          <li>Automatizar coleta de 50 leads pode economizar 4-8 horas de trabalho manual</li>
-          <li>O custo em tokens e insignificante comparado ao valor dos dados coletados</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Para maximizar eficiencia no modo scraping, processe em batches: 'navegue para pagina 1 do diretorio, extraia os 10 primeiros resultados, salve na planilha'. Depois repita para proximas paginas. Isso evita acumular muitos dados no contexto de uma vez e permite /compact entre batches se necessario.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Processar dados em batches de 10-20</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Salvar na planilha apos cada batch</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Usar /compact entre batches se contexto alto</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Tentar extrair centenas de resultados de uma vez</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Manter dados no contexto sem salvar</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Esquecer de desconectar Browser + Sheets apos scraping</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 5 -->
-    <section id="topico-5" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">🔍 Modo Code Review: Filesystem + GitHub</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Configuracao Para Review
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Para code review, o setup e igual ao building: Filesystem + GitHub. O Claude le o PR remoto (GitHub MCP) e o codigo local (Filesystem) para gerar reviews contextualizados.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>MCPs ativos:</strong> Filesystem (~500) + GitHub (~2.000) = ~2.500 tokens overhead</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Workflow:</strong> Leia PR → Leia arquivos afetados → Gere review → Poste comments</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Combinacao:</strong> Use Skill de review (/review) + GitHub MCP para reviews completos</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Vantagem:</strong> Review com contexto do codigo local E do PR remoto</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Review Com Contexto Completo
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>GitHub MCP: le o diff, comments e descricao do PR</li>
-          <li>Filesystem: le os arquivos completos para contexto</li>
-          <li>Skill de review: aplica checklist padrao da equipe</li>
-          <li>Resultado: review mais completo que humano comum faria</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          O workflow ideal: 1) 'Leia o PR #15 e seus comments'. 2) 'Leia os arquivos modificados no meu projeto local'. 3) 'Execute /review com foco em seguranca e performance'. 4) 'Gere comments formatados para postar no PR'. A combinacao de MCP + Skill produz reviews de qualidade senior.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Combinar GitHub MCP com Skill de review</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Ler arquivos locais para contexto completo</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Gerar comments formatados para o PR</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Fazer review so com diff do PR (sem contexto local)</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Postar comments sem revisar o que o Claude gerou</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Manter GitHub conectado apos o review</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 6 -->
-    <section id="topico-6" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">🧠 Mentalidade de Operador</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Pense em Modos, Nao em MCPs
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Operadores profissionais nao pensam 'quais MCPs eu tenho'. Pensam 'qual modo estou e quais MCPs esse modo precisa'. A fase de trabalho dita a configuracao, nao o contrario. Trocar de modo e trocar de MCPs em bloco.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Building:</strong> Filesystem + GitHub (~2.500 tokens)</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>UI/Design:</strong> Filesystem + Browser (~5.500 tokens)</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Backend/Data:</strong> Filesystem + Database (~2.000 tokens)</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Lead Scraping:</strong> Filesystem + Browser + Sheets (~6.300 tokens)</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Code Review:</strong> Filesystem + GitHub (~2.500 tokens)</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> A Mudanca de Mentalidade
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>De: 'vou adicionar esse MCP' → Para: 'vou entrar em modo UI'</li>
-          <li>De: 'quais MCPs tenho ligados?' → Para: 'qual fase do trabalho estou?'</li>
-          <li>De: gerenciar MCPs individuais → Para: trocar entre configuracoes pre-definidas</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Crie aliases no shell para cada modo: alias modo-build='claude mcp remove browser; claude mcp remove postgres; claude mcp add github -- npx -y @anthropic/mcp-github'. alias modo-ui='claude mcp remove github; claude mcp remove postgres; claude mcp add browser -- npx -y @anthropic/mcp-puppeteer'. Trocar de modo vira um unico comando.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Pensar em modos/fases de trabalho</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Criar aliases ou scripts para cada modo</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Trocar de modo quando mudar de fase</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Gerenciar MCPs individualmente sem estrategia</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Ficar no mesmo modo quando a fase de trabalho mudou</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Acumular MCPs sem relacao com a tarefa atual</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESUMO FINAL -->
-    <section class="mb-12">
-      <div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
-        <h2 class="text-2xl font-bold mb-6 flex items-center">
-          <span class="mr-3">📋</span> Resumo do Modulo
-        </h2>
-
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Modo Building: Filesystem + GitHub</strong>
-              <span class="text-neutral-400"> - Quando voce esta construindo features novas, a prioridade e maximo contexto para...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Modo UI/Design: Filesystem + Browser</strong>
-              <span class="text-neutral-400"> - Quando trabalhando em UI, o Claude precisa VER o resultado. Browser MCP e essenc...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Modo Backend/Data: Filesystem + Database</strong>
-              <span class="text-neutral-400"> - Quando trabalhando com backend e dados, conecte Database MCP para acesso direto ...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Modo Lead Scraping: Browser + Sheets</strong>
-              <span class="text-neutral-400"> - Para lead scraping e coleta de dados da web, combine Browser (navegar e extrair)...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Modo Code Review: Filesystem + GitHub</strong>
-              <span class="text-neutral-400"> - Para code review, o setup e igual ao building: Filesystem + GitHub. O Claude le ...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Mentalidade de Operador</strong>
-              <span class="text-neutral-400"> - Operadores profissionais nao pensam 'quais MCPs eu tenho'. Pensam 'qual modo est...</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-          <h3 class="font-semibold text-rose-400 mb-2">Proximo:</h3>
-          <p class="text-neutral-300">6.10 - Troubleshooting</p>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="modulo-6-8.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-            ← Modulo Anterior
-          </a>
-          <a href="modulo-6-10.html" class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors">
-            Proximo Modulo →
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>6 Pilares do Claude Code Resumido - 2026 | <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
+NAVIGATION
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">6P Summary</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://duclub" target="_blank">duclub</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
+<span class="sm:hidden">T1</span>
+<span class="hidden sm:inline">Shortcuts</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">
+<span class="sm:hidden">T2</span>
+<span class="hidden sm:inline">Starter Pack</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">T3</span>
+<span class="hidden sm:inline">Workflows</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">
+<span class="sm:hidden">T4</span>
+<span class="hidden sm:inline">Prompts</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">
+<span class="sm:hidden">T5</span>
+<span class="hidden sm:inline">Skills</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html">
+<span class="sm:hidden">T6</span>
+<span class="hidden sm:inline">MCPs</span>
+</a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20">
+<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+BREADCRUMB
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-rose-400" href="index.html">Track 6</a>
+<span>/</span>
+<span class="text-rose-400">Module 6.9</span>
+</div>
+</nav>
+HEADER
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MODULE 6.9</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🔄 Active Rotation Strategy</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Learn to rotate MCPs according to the phase of work. Building, UI, backend, scraping and code review - each phase has its ideal configuration. The mentality of the professional trader.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">12</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Advanced</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Strategy</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+CONTENT
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+TOPIC 1
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🏗️ Building Mode: Filesystem + GitHub</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Configuration to Build Features</h3>
+<p class="text-neutral-300 mb-4">When you're building new features, the priority is maximum context for code. Keep only Filesystem (cross-repo access) and GitHub (to read issues with requirements). Disconnect Browser and Database - you don't need web or live data to code.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Active MCPs:</strong>Filesystem (~500) + GitHub (~2,000) = ~2,500 tokens overhead</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Free context:</strong>~197,500 tokens available for code and instructions</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Workflow:</strong>Read issue → Implement → Create PR → Link issue</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Optimization:</strong>Disconnect GitHub after reading the issue if the session will be long</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Why This Setup</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Building needs maximum space for code and complex instructions</li>
+<li>GitHub is only necessary to search for requirements (issues) and create PRs</li>
+<li>Browser and Database are irrelevant to building pure code</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Optimized workflow: 1) Connect GitHub. 2) 'Read issue #42 and summarize the requirements'. 3) Disconnect GitHub (mcp remove github). 4) Code with just Filesystem. 5) Reconnect GitHub. 6) 'Create PR with these changes by linking issue #42'. 7) Disconnect. Average overhead: much lower than keeping GitHub connected all the time.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Keep overhead below 3,000 tokens for building</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Disconnect GitHub between reading issue and creating PR</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Maximize context for code</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Keep Browser on during coding</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Keep Database connected unnecessarily</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Connect MCPs 'just in case'</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 2
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🎨 UI/Design Mode: Filesystem + Browser</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Configuration for Visual Work</h3>
+<p class="text-neutral-300 mb-4">When working on UI, Claude needs to SEE the result. MCP Browser is essential here but it is the most expensive. Accept the high overhead (~5,500 tokens) because visual verification is irreplaceable for UI.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Active MCPs:</strong>Filesystem (~500) + Browser (~5,000) = ~5,500 tokens overhead</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Free context:</strong>~194,500 tokens - less but enough</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Workflow:</strong>Code → Screenshot → Adjustment → Screenshot → Approve</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Careful:</strong>Each screenshot consumes an extra 5,000-15,000 tokens!</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>The Necessary Trade-off</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>UI without visual verification and blind coding</li>
+<li>The high overhead of the Browser is justifiable here (single use case)</li>
+<li>Minimize screenshots: ask for get_text when you don't need to SEE it visually</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">For UI, use an efficient verification flow: 1) Code the component. 2) 'Navigate to localhost:3000/page and take screenshot'. 3) 'Adjust header padding and font size'. 4) 'Take screenshot again to confirm'. Limit to 2-3 screenshots per cycle. More than that and waste tokens.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Accept high Browser overhead for UI tasks</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Limit screenshots to 2-3 per tuning cycle</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Use get_text for non-visual checks</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Request screenshots for each minor change</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Keep Browser on after UI phase</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Do more than 3-4 screenshot cycles without pausing</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 3
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">⚙️ Backend/Data Mode: Filesystem + Database</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Configuration for Backend and Data</h3>
+<p class="text-neutral-300 mb-4">When working with backend and data, connect Database MCP for direct access to the database. Claude can explore schemas, validate queries, and debug data issues in real time.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Active MCPs:</strong>Filesystem (~500) + Database (~1,500) = ~2,000 tokens overhead</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Free context:</strong>~198,000 tokens - excellent for backend code</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Workflow:</strong>Explore schema → Write query → Validate → Implement in code</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Careful:</strong>Use LIMIT in queries! Returned data consumes extra tokens</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Backend With Real Data</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Claude writes SQL based on REAL schema, not guesswork</li>
+<li>Live data debugging: see issues happening</li>
+<li>More accurate migrations: based on the current state of the database</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Start every backend session with: 'list all the database tables and describe the ones I will work on today: [table1, table2]'. This gives Claude real schema context at minimal cost. From then on, queries and migrations will be much more precise.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Get started with schema exploration</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Use LIMIT in every query</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Disconnect Database when finished with data</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>SELECT * without LIMIT on large tables</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Connect Database during frontend coding</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Running DDL without carefully reviewing</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 4
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🕷️ Lead Scraping Mode: Browser + Sheets</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Configuration for Data Collection</h3>
+<p class="text-neutral-300 mb-4">For lead scraping and web data collection, combine Browser (browse and extract) with Google Sheets (store results). It is the most expensive setup but with high output value for sales and marketing teams.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Active MCPs:</strong>Filesystem (~500) + Browser (~5,000) + Sheets (~800) = ~6,300 tokens overhead</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Free context:</strong>~193,700 tokens - tight but functional</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Workflow:</strong>Navigate directory → Extract data → Save to spreadsheet → Repeat</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Notice:</strong>This is the heaviest setup - only use when necessary</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>High Cost, High Value</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>6,300 tokens overhead is high, but the output justifies it</li>
+<li>Automating collection of 50 leads can save 4-8 hours of manual work</li>
+<li>The cost in tokens is insignificant compared to the value of the data collected</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">To maximize efficiency in scraping mode, process in batches: 'navigate to page 1 of the directory, extract the first 10 results, save to spreadsheet'. Then repeat for the next pages. This avoids accumulating too much data in the context at once and allows /compact between batches if necessary.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Process data in batches of 10-20</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Save to spreadsheet after each batch</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Use /compact between batches if context high</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Trying to extract hundreds of results at once</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Keep data in context without saving</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Forgetting to disconnect Browser + Sheets after scraping</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 5
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔍 Code Review Mode: Filesystem + GitHub</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Configuration for Review</h3>
+<p class="text-neutral-300 mb-4">For code review, the setup is the same as building: Filesystem + GitHub. Claude reads the remote PR (GitHub MCP) and the local code (Filesystem) to generate contextualized reviews.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Active MCPs:</strong>Filesystem (~500) + GitHub (~2,000) = ~2,500 tokens overhead</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Workflow:</strong>Read PR → Read affected files → Generate review → Post comments</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Combination:</strong>Use review skill (/review) + GitHub MCP for full reviews</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Advantage:</strong>Review with context of local code AND remote PR</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Review With Full Context</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>GitHub MCP: read the diff, comments and PR description</li>
+<li>Filesystem: read complete files for context</li>
+<li>Review skill: applies the team’s standard checklist</li>
+<li>Result: more complete review than a common human would do</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">The ideal workflow: 1) 'Read PR #15 and its comments'. 2) 'Read modified files in my local project'. 3) 'Run /review with a focus on security and performance'. 4) 'Generate formatted comments to post in PR'. The combination of MCP + Skill produces senior quality reviews.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Combine GitHub MCP with Review Skill</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Read local files for full context</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Generate comments formatted for PR</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Review only with PR diff (without local context)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Post comments without reviewing what Claude generated</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Keep GitHub connected after the review</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 6
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🧠 Operator Mentality</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Think in Modes, Not MCPs</h3>
+<p class="text-neutral-300 mb-4">Professional operators don't think 'which MCPs do I have'. They think 'which mode am I in and which MCPs does this mode need'. The work phase dictates the configuration, not the other way around. Switch modes and switch MCPs en bloc.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Building:</strong>Filesystem + GitHub (~2,500 tokens)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">UI/Design:</strong>Filesystem + Browser (~5,500 tokens)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Backend/Data:</strong>Filesystem + Database (~2,000 tokens)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Lead Scraping:</strong>Filesystem + Browser + Sheets (~6,300 tokens)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Code Review:</strong>Filesystem + GitHub (~2,500 tokens)</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>The Change of Mindset</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>From: 'I'm going to add this MCP' → To: 'I'm going to enter UI mode'</li>
+<li>From: 'which MCPs do I have connected?' → For: 'what stage of work am I in?'</li>
+<li>From: manage individual MCPs → To: switch between pre-defined configurations</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Create aliases in the shell for each mode: alias mode-build='claude mcp remove browser; claude mcp remove postgres; claude mcp add github -- npx -y @anthropic/mcp-github'. alias mode-ui='claude mcp remove github; claude mcp remove postgres; claude mcp add browser -- npx -y @anthropic/mcp-puppeteer'. Changing modes becomes a single command.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Think about work modes/phases</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Create aliases or scripts for each mode</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Switch mode when changing phase</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Manage MCPs individually without strategy</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Stay in the same mode when the work phase changed</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Accumulate MCPs unrelated to the current task</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+FINAL SUMMARY
+<section class="mb-12">
+<div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center">
+<span class="mr-3">📋</span>Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Building Mode: Filesystem + GitHub</strong>
+<span class="text-neutral-400">- When you are building new features, the priority is maximum context for...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">UI/Design Mode: Filesystem + Browser</strong>
+<span class="text-neutral-400">- When working on UI, Claude needs to SEE the result. MCP Browser and essentials...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Backend/Data Mode: Filesystem + Database</strong>
+<span class="text-neutral-400">- When working with backend and data, connect Database MCP for direct access...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Lead Scraping Mode: Browser + Sheets</strong>
+<span class="text-neutral-400">- For lead scraping and web data collection, combine Browser (browse and extract)...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Code Review Mode: Filesystem + GitHub</strong>
+<span class="text-neutral-400">- For code review, the setup is the same as building: Filesystem + GitHub. Claude le...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Operator Mentality</strong>
+<span class="text-neutral-400">- Professional operators don't think 'which MCPs do I have'. They think 'which way is...</span>
+</div>
+</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-rose-400 mb-2">Next:</h3>
+<p class="text-neutral-300">6.10 - Troubleshooting</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-8.html">← Previous Module</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-6-10.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+FOOTER
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>6 Pillars of the Claude Code Summarized - 2026 |<a class="text-sky-400 hover:text-sky-300" href="https://duclub" target="_blank">duclub</a></p>
+</div>
+</footer>
+SCRIPTS
+<script data-notranslate="True">
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
