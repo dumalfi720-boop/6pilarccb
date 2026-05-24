@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+html
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo 4.1 - Os 5 Prompts Diarios | 6 Pilares do Claude Code Resumido</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 4.1 - The 5 Daily Prompts | 6 Pillars of the Claude Code Summarized</title>
+<script data-notranslate="True" src="https://cdn.tailwindcss.com"></script>
+<script data-notranslate="True">tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-notranslate="True">
     body{font-family:'Inter',sans-serif}.dark body{background-color:#111827}
     .topic-explanation{display:none}.topic-explanation.active{display:block}
     html:not(.dark) body{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 50%,#f1f5f9 100%)}
@@ -19,161 +19,139 @@
   </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">6P Resumido</span></a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Atalhos</span></a>
-          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Starter Pack</span></a>
-          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Workflows</span></a>
-          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Prompts</span></a>
-          <a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Skills</span></a>
-          <a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">MCPs</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- BREADCRUMB -->
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../../index.html" class="hover:text-amber-400">Inicio</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-amber-400">Trilha 4</a>
-      <span>/</span>
-      <span class="text-amber-400">Modulo 4.1</span>
-    </div>
-  </nav>
-
-  <!-- HEADER -->
-  <header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULO 4.1</span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🧑‍💻 Os 5 Prompts Diarios</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">
-        Os cinco prompts que cobrem 95% do trabalho diario com Claude Code. Cada um resolve uma categoria especifica de tarefa: iniciar com confianca, planejar antes de construir, reportar bugs estruturadamente, auditar qualidade e aprender conceitos novos.
-      </p>
-      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">6</div>
-          <div class="text-xs text-neutral-400">Topicos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">30</div>
-          <div class="text-xs text-neutral-400">Minutos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">Essencial</div>
-          <div class="text-xs text-neutral-400">Nivel</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">Pratico</div>
-          <div class="text-xs text-neutral-400">Tipo</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- CONTEUDO -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <!-- TOPICO 1: 95% Confidence -->
-    <section id="topico-1" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">🎯 95% Confidence - O Prompt de Inicio</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O prompt <strong class="text-amber-400">95% Confidence</strong> e o mais importante do painel. Ele forca o Claude a estudar o projeto antes de agir, eliminando respostas genericas e garantindo que qualquer acao tenha base no codigo real. Use sempre que iniciar uma sessao ou enfrentar uma tarefa complexa.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Antes de fazer qualquer coisa, leia os arquivos relevantes e entenda o projeto. Nao comece a codar ate ter 95% de confianca de que entende:
+NAVIGATION
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🧠</span><span class="font-bold text-lg hidden sm:inline">6P Summary</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://duclub" target="_blank">duclub</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Shortcuts</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Starter Pack</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Workflows</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Prompts</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">MCPs</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+BREADCRUMB
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-amber-400" href="index.html">Track 4</a>
+<span>/</span>
+<span class="text-amber-400">Module 4.1</span>
+</div>
+</nav>
+HEADER
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULE 4.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧑‍💻 The 5 Daily Prompts</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The five prompts that cover 95% of daily work with Claude Code. Each one solves a specific category of task: starting with confidence, planning before building, reporting bugs structuredly, auditing quality and learning new concepts.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">30</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Essential</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Practical</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+CONTENT
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+TOPIC 1: 95% Confidence
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 95% Confidence - The Start Prompt</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">The prompt<strong class="text-amber-400">95% Confidence</strong>and the most important thing on the panel. It forces Claude to study the project before acting, eliminating generic responses and ensuring that any action is based on real code. Use it whenever you start a session or face a complex task.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Antes de fazer qualquer coisa, leia os arquivos relevantes e entenda o projeto. Nao comece a codar ate ter 95% de confianca de que entende:
 1. A estrutura do projeto
 2. Os padroes e convencoes existentes
 3. Como a mudanca solicitada se encaixa
 4. Quais arquivos serao afetados
 
 Depois de estudar, me diga o que voce entendeu e seu plano. So execute depois que eu aprovar.</pre>
-        </div>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Forca <strong class="text-white">leitura antes de acao</strong> - elimina o vicio de gerar codigo generico</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Cria um <strong class="text-white">checkpoint de aprovacao</strong> - voce valida o entendimento antes da execucao</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Ideal para <strong class="text-white">primeiras sessoes</strong> em projetos existentes ou tarefas que envolvem multiplos arquivos</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Coloque este prompt no seu <code class="bg-dark-700 px-2 py-1 rounded text-amber-400">CLAUDE.md</code> como instrucao padrao. Assim, toda sessao comeca com estudo automatico do projeto. Voce pode ajustar o percentual (90%, 95%, 99%) conforme a criticidade da tarefa.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Usar no inicio de toda sessao com tarefa complexa</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ler o plano que o Claude apresenta antes de aprovar</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pedir que liste os arquivos que vai modificar</span></li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Aprovar o plano sem ler - isso anula o proposito</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Usar para tarefas triviais como renomear uma variavel</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pular o estudo e pedir que va direto para o codigo</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOPICO 2: Plan Mode Blueprint -->
-    <section id="topico-2" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">📋 Plan Mode Blueprint - O Prompt de Planejamento</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-amber-400">Plan Mode Blueprint</strong> e o prompt que voce usa quando precisa construir algo significativo. Ele ativa o modo de planejamento do Claude, gerando um blueprint detalhado antes de qualquer implementacao. Perfeito para features novas, refatoracoes grandes ou mudancas arquiteturais.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Use o modo ultrathink para planejar esta tarefa. Quero um blueprint completo antes de qualquer codigo:
+</div>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Strength<strong class="text-white">reading before action</strong>- eliminates the addiction of generating generic code</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Create a<strong class="text-white">approval checkpoint</strong>- you validate understanding before execution</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Ideal for<strong class="text-white">first sessions</strong>in existing projects or tasks that involve multiple files</span>
+</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Put this prompt in your<code class="bg-dark-700 px-2 py-1 rounded text-amber-400" data-notranslate="True">CLAUDE.md</code>as standard instruction. Thus, every session begins with automatic study of the project. You can adjust the percentage (90%, 95%, 99%) according to the criticality of the task.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Use at the beginning of every session with complex tasks</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Read the plan that Claude presents before approving</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ask you to list the files you will modify</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Approving the plan without reading it - this defeats the purpose</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Use for trivial tasks like renaming a variable</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Skip the study and ask them to go straight to the code</span></li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 2: Plan Mode Blueprint
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📋 Plan Mode Blueprint - The Planning Prompt</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-amber-400">Plan Mode Blueprint</strong>It's the prompt you use when you need to build something meaningful. It activates Claude's planning mode, generating a detailed blueprint before any implementation. Perfect for new features, large refactorings or architectural changes.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Use o modo ultrathink para planejar esta tarefa. Quero um blueprint completo antes de qualquer codigo:
 
 1. Objetivo: [descreva o que precisa ser feito]
 2. Liste todos os arquivos que serao criados ou modificados
@@ -183,69 +161,59 @@ Depois de estudar, me diga o que voce entendeu e seu plano. So execute depois qu
 6. Proponha testes para validar
 
 NAO implemente nada ainda. Apenas o plano.</pre>
-        </div>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Ativa o <strong class="text-white">extended thinking</strong> para analise profunda antes de execucao</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Gera um <strong class="text-white">mapa de implementacao</strong> que voce pode revisar, ajustar e aprovar</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Reduz <strong class="text-white">retrabalho</strong> ao identificar problemas antes da implementacao</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Apos receber o blueprint, use <code class="bg-dark-700 px-2 py-1 rounded text-amber-400">Shift+Tab</code> para entrar no modo multilinhas e fazer ajustes detalhados antes de aprovar a implementacao. Voce pode pedir para implementar um passo de cada vez.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Usar para features que tocam mais de 3 arquivos</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pedir implementacao incremental apos aprovar o plano</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Salvar o blueprint como referencia durante o desenvolvimento</span></li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Usar para mudancas simples que nao precisam de plano</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ignorar os riscos identificados no blueprint</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pedir para implementar tudo de uma vez sem revisar</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOPICO 3: Structured Bug Report -->
-    <section id="topico-3" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">🐛 Structured Bug Report - O Prompt de Debug</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-amber-400">Structured Bug Report</strong> transforma qualquer problema em uma investigacao sistematica. Em vez de dizer "esta quebrado", voce fornece um formato que forca o Claude a analisar o bug como um engenheiro senior: reproduzir, isolar, diagnosticar e propor solucao.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Investigue este bug de forma estruturada:
+</div>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Activate the<strong class="text-white">extended thinking</strong>for in-depth analysis before execution</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Generates a<strong class="text-white">implementation map</strong>that you can review, adjust and approve</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Reduce<strong class="text-white">rework</strong>by identifying problems before implementation</span>
+</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">After receiving the blueprint, use<code class="bg-dark-700 px-2 py-1 rounded text-amber-400" data-notranslate="True">Shift+Tab</code>to enter multiline mode and make detailed adjustments before approving the implementation. You can ask to implement one step at a time.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Use for features that play more than 3 files</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Request incremental implementation after approving the plan</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Save the blueprint as a reference during development</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Use for simple changes that do not require a plan</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ignore the risks identified in the blueprint</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Asking to implement everything at once without reviewing</span></li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 3: Structured Bug Report
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🐛 Structured Bug Report - The Debug Prompt</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-amber-400">Structured Bug Report</strong>turns any problem into a systematic investigation. Instead of saying "it's broken", you provide a format that forces Claude to analyze the bug like a senior engineer: reproduce, isolate, diagnose and propose a solution.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Investigue este bug de forma estruturada:
 
 Bug: [descricao do problema]
 Comportamento esperado: [o que deveria acontecer]
@@ -260,69 +228,59 @@ Siga este processo:
 5. Sugira um teste para prevenir regressao
 
 NAO corrija antes de explicar a causa raiz.</pre>
-        </div>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Estrutura a investigacao em <strong class="text-white">causa raiz vs sintoma</strong></span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Exige <strong class="text-white">correcao minima</strong> - evita rewrites desnecessarios</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Inclui <strong class="text-white">teste de regressao</strong> para prevenir que o bug volte</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Inclua o log de erro ou stack trace diretamente no prompt. Quanto mais contexto concreto voce der, menos tempo o Claude gasta lendo arquivos irrelevantes. Use <code class="bg-dark-700 px-2 py-1 rounded text-amber-400">Shift+Tab</code> para colar logs multilinhas.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Incluir logs, stack traces e mensagens de erro reais</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Exigir explicacao da causa antes de aceitar a correcao</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pedir teste de regressao junto com o fix</span></li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Dizer apenas "esta quebrado, conserta"</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Aceitar correcao sem entender a causa raiz</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Deixar o Claude reescrever arquivos inteiros para um bug pontual</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOPICO 4: Brutal Audit -->
-    <section id="topico-4" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">🔍 Brutal Audit - O Prompt de Qualidade</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-amber-400">Brutal Audit</strong> e o seu revisor implacavel. Ele instrui o Claude a encontrar tudo que esta errado, fragil ou mal feito no codigo. Use no final de uma sessao de desenvolvimento para garantir que o que foi construido tem qualidade de producao.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Faca uma auditoria brutal do codigo que acabamos de escrever. Seja implacavel:
+</div>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Structure the investigation into<strong class="text-white">root cause vs symptom</strong></span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Demands<strong class="text-white">minimum correction</strong>- avoids unnecessary rewrites</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Includes<strong class="text-white">regression test</strong>to prevent the bug from returning</span>
+</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Include the error log or stack trace directly at the prompt. The more concrete context you provide, the less time Claude spends reading irrelevant files. Use<code class="bg-dark-700 px-2 py-1 rounded text-amber-400" data-notranslate="True">Shift+Tab</code>to paste multiline logs.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Include logs, stack traces and actual error messages</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Require explanation of the cause before accepting the correction</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Request a regression test along with the fix</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Just say "it's broken, fix it"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Accepting correction without understanding the root cause</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Let Claude rewrite entire files for a one-off bug</span></li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 4: Brutal Audit
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔍 Brutal Audit - The Quality Prompt</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-amber-400">Brutal Audit</strong>and your relentless reviewer. He instructs Claude to find everything that is wrong, weak or poorly done in the code. Use at the end of a development session to ensure that what has been built is production quality.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Faca uma auditoria brutal do codigo que acabamos de escrever. Seja implacavel:
 
 1. Bugs potenciais e edge cases nao tratados
 2. Falhas de seguranca (injecao, exposicao de dados, auth)
@@ -338,69 +296,59 @@ Para cada problema encontrado, classifique como:
 - BAIXO: Sugestao de melhoria
 
 NAO suavize. Prefiro saber agora do que descobrir em producao.</pre>
-        </div>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Classificacao por <strong class="text-white">severidade</strong> ajuda a priorizar correcoes</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Cobre <strong class="text-white">seguranca, performance, padroes e testes</strong> em uma unica passada</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>O tom "brutal" instrui o Claude a <strong class="text-white">nao ser complacente</strong> com problemas</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Rode o Brutal Audit antes de cada commit ou pull request. Apos receber o relatorio, peca para corrigir apenas os itens CRITICO e ALTO primeiro. Os itens MEDIO e BAIXO podem virar issues para depois.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Rodar antes de cada commit importante</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Corrigir CRITICO e ALTO antes de prosseguir</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Usar como checklist de qualidade recorrente</span></li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ignorar os resultados porque "funciona em dev"</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pedir para suavizar o feedback</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Corrigir tudo de uma vez sem priorizar por severidade</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOPICO 5: Teach Me -->
-    <section id="topico-5" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">📚 Teach Me - O Prompt de Aprendizado</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        O <strong class="text-amber-400">Teach Me</strong> transforma o Claude no seu tutor pessoal. Em vez de apenas resolver o problema, ele explica o conceito por tras, com exemplos do seu proprio codigo. Use quando encontrar algo que nao entende ou quando quer aprofundar um conceito.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Template do Prompt
-        </h3>
-        <div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
-          <pre class="whitespace-pre-wrap">Me ensine [CONCEITO/PADRAO] usando exemplos do nosso proprio projeto.
+</div>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Sort by<strong class="text-white">severity</strong>helps prioritize fixes</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Copper<strong class="text-white">security, performance, standards and testing</strong>in a single pass</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>The "brutal" tone instructs Claude to<strong class="text-white">don't be complacent</strong>with problems</span>
+</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Run Brutal Audit before every commit or pull request. After receiving the report, ask to correct only the CRITICAL and HIGH items first. MEDIUM and LOW items can become issues for later.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Run before every important commit</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Correct CRITICAL and HIGH before proceeding</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Use as a recurring quality checklist</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ignore results because "works in dev"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ask to soften feedback</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Fix everything at once without prioritizing by severity</span></li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 5: Teach Me
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📚 Teach Me - The Learning Prompt</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-amber-400">Teach Me</strong>Turn Claude into your personal tutor. Instead of just solving the problem, he explains the concept behind it, with examples from his own code. Use it when you find something you don't understand or when you want to delve deeper into a concept.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Prompt Template</h3>
+<div class="bg-dark-900 rounded-lg p-4 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre class="whitespace-pre-wrap" data-notranslate="True">Me ensine [CONCEITO/PADRAO] usando exemplos do nosso proprio projeto.
 
 1. Explique o conceito de forma simples (como se eu tivesse 5 anos de experiencia)
 2. Mostre onde ja usamos isso no projeto (aponte arquivos e linhas)
@@ -409,166 +357,144 @@ NAO suavize. Prefiro saber agora do que descobrir em producao.</pre>
 5. Liste armadilhas comuns que devo evitar
 
 Nao simplifique demais - quero entender de verdade, nao apenas copiar.</pre>
-        </div>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Usa <strong class="text-white">exemplos do seu projeto</strong> em vez de exemplos genericos</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Explica o <strong class="text-white">"por que"</strong> alem do "como"</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-amber-400 mt-1">•</span>
-            <span>Inclui <strong class="text-white">armadilhas praticas</strong> para evitar erros comuns</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Use o Teach Me sempre que o Claude aplicar um padrao que voce nao conhece. Em vez de apenas aceitar o codigo, entenda o conceito. Isso acelera seu aprendizado exponencialmente porque os exemplos sao do seu proprio contexto.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Usar quando encontrar conceitos novos no seu codigo</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pedir exemplos concretos do projeto atual</span></li>
-            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Fazer perguntas follow-up para aprofundar</span></li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Aceitar codigo que voce nao entende sem perguntar</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Usar como substituto para documentacao oficial em conceitos criticos</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pedir explicacoes muito basicas que consomem contexto desnecessariamente</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOPICO 6: Estrategia de Combinacao -->
-    <section id="topico-6" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">🔄 Estrategia de Combinacao</h2>
-      </div>
-
-      <p class="text-neutral-300 mb-6 leading-relaxed">
-        Os 5 prompts nao sao usados isoladamente. A <strong class="text-amber-400">estrategia de combinacao</strong> define a ordem e o momento certo para cada um durante uma sessao de trabalho tipica. Domine essa sequencia e voce tera um workflow completo e previsivel.
-      </p>
-
-      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Sequencia Diaria Recomendada
-        </h3>
-        <div class="space-y-4 text-neutral-300">
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">1</span>
-            <div><strong class="text-white">95% Confidence</strong> - Inicio da sessao. Claude estuda o projeto e apresenta o que entendeu.</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">2</span>
-            <div><strong class="text-white">Plan Mode Blueprint</strong> - Planejar a tarefa do dia. Gerar o blueprint antes de codar.</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">3</span>
-            <div><strong class="text-white">Structured Bug Report</strong> - Durante o desenvolvimento, quando encontrar bugs.</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">4</span>
-            <div><strong class="text-white">Brutal Audit</strong> - Antes do commit. Revisar tudo que foi construido.</div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">5</span>
-            <div><strong class="text-white">Teach Me</strong> - A qualquer momento. Quando encontrar algo que nao entende.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Por Que Essa Ordem Funciona
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li><strong class="text-white">Progressao natural</strong> - Estudo → Planejamento → Execucao → Debug → Revisao → Aprendizado</li>
-          <li><strong class="text-white">Cada prompt alimenta o proximo</strong> - O estudo do 95% informa o blueprint, que guia o desenvolvimento, que gera bugs para investigar</li>
-          <li><strong class="text-white">Audit como gate de qualidade</strong> - Nada vai para producao sem passar pela auditoria brutal</li>
-        </ul>
-      </div>
-
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Nao precisa usar todos os 5 prompts em toda sessao. Para sessoes rapidas de bug fix, use apenas o Structured Bug Report + Brutal Audit. Para sessoes de aprendizado, foque no Teach Me. A chave e saber qual prompt usar em qual momento.
-        </p>
-      </div>
-    </section>
-
-    <!-- RESUMO FINAL -->
-    <section class="mb-12">
-      <div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
-        <h2 class="text-2xl font-bold mb-6 flex items-center">
-          <span class="mr-3">📋</span> Resumo do Modulo
-        </h2>
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">95% Confidence</strong><span class="text-neutral-400"> - Forca estudo antes de acao, use no inicio de sessoes complexas</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Plan Mode Blueprint</strong><span class="text-neutral-400"> - Gera plano completo antes de implementar, ideal para features grandes</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Structured Bug Report</strong><span class="text-neutral-400"> - Investigacao sistematica de bugs com causa raiz e teste de regressao</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Brutal Audit</strong><span class="text-neutral-400"> - Revisao implacavel antes do commit, classificada por severidade</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Teach Me</strong><span class="text-neutral-400"> - Aprendizado contextualizado com exemplos do seu proprio projeto</span></div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-amber-400 mt-1">✓</span>
-            <div><strong class="text-white">Combine na ordem certa</strong><span class="text-neutral-400"> - Estudo → Plano → Build → Debug → Audit → Learn</span></div>
-          </div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-          <h3 class="font-semibold text-amber-400 mb-2">Proximo Modulo:</h3>
-          <p class="text-neutral-300">4.2 - Prompts de Getting Started</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha</a>
-          <a href="modulo-4-2.html" class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors">Proximo Modulo →</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>6 Pilares do Claude Code Resumido - 2026 | <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
+</div>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Use<strong class="text-white">examples of your project</strong>instead of generic examples</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Explains the<strong class="text-white">"why"</strong>beyond the "how"</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-amber-400 mt-1">•</span>
+<span>Includes<strong class="text-white">practical traps</strong>to avoid common mistakes</span>
+</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Use Teach Me whenever Claude applies a pattern that you don't know. Instead of just accepting the code, understand the concept. This speeds up your learning exponentially because the examples are from your own context.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Use when you find new concepts in your code</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ask for concrete examples of the current project</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ask follow-up questions to delve deeper</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Accepting code you don't understand without asking</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Use as a substitute for official documentation on critical concepts</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Asking for very basic explanations that unnecessarily consume context</span></li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 6: Combination Strategy
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔄 Combination Strategy</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">The 5 prompts are not used in isolation. THE<strong class="text-amber-400">combination strategy</strong>defines the right order and timing for each person during a typical work session. Master this sequence and you will have a complete and predictable workflow.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Recommended Daily Sequence</h3>
+<div class="space-y-4 text-neutral-300">
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">1</span>
+<div><strong class="text-white">95% Confidence</strong>- Start of the session. Claude studies the project and presents what he understood.</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">2</span>
+<div><strong class="text-white">Plan Mode Blueprint</strong>- Plan the day's task. Generate the blueprint before coding.</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">3</span>
+<div><strong class="text-white">Structured Bug Report</strong>- During development, when you find bugs.</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">4</span>
+<div><strong class="text-white">Brutal Audit</strong>- Before commit. Review everything that was built.</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">5</span>
+<div><strong class="text-white">Teach Me</strong>- Any time. When you find something you don't understand.</div>
+</div>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Why This Order Works</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong class="text-white">Natural progression</strong>- Study → Planning → Execution → Debug → Review → Learning</li>
+<li><strong class="text-white">Each prompt feeds into the next</strong>- The 95% study informs the blueprint, which guides development, which generates bugs to investigate</li>
+<li><strong class="text-white">Audit as a quality gate</strong>- Nothing goes into production without going through brutal auditing</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">You do not need to use all 5 prompts in every session. For quick bug fixing sessions, just use Structured Bug Report + Brutal Audit. For learning sessions, focus on Teach Me. The key is knowing which prompt to use at which time.</p>
+</div>
+</section>
+FINAL SUMMARY
+<section class="mb-12">
+<div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center">
+<span class="mr-3">📋</span>Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">95% Confidence</strong><span class="text-neutral-400">- Strength study before action, use at the beginning of complex sessions</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Plan Mode Blueprint</strong><span class="text-neutral-400">- Generates complete plan before implementing, ideal for large features</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Structured Bug Report</strong><span class="text-neutral-400">- Systematic bug investigation with root cause and regression testing</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Brutal Audit</strong><span class="text-neutral-400">- Relentless pre-commit review, classified by severity</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Teach Me</strong><span class="text-neutral-400">- Contextualized learning with examples from your own project</span></div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-amber-400 mt-1">✓</span>
+<div><strong class="text-white">Match in the right order</strong><span class="text-neutral-400">- Study → Plan → Build → Debug → Audit → Learn</span></div>
+</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-amber-400 mb-2">Next Module:</h3>
+<p class="text-neutral-300">4.2 - Getting Started Prompts</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Trail</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="modulo-4-2.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+FOOTER
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>6 Pillars of the Claude Code Summarized - 2026 |<a class="text-sky-400 hover:text-sky-300" href="https://duclub" target="_blank">duclub</a></p>
+</div>
+</footer>
+SCRIPTS
+<script data-notranslate="True">
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -585,6 +511,5 @@ Nao simplifique demais - quero entender de verdade, nao apenas copiar.</pre>
       if (el) el.classList.toggle('active');
     }
   </script>
-
 </body>
 </html>
