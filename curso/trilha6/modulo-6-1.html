@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+html
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo 6.1 - Token Tax e Custo de Contexto | 6 Pilares do Claude Code Resumido</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 6.1 - Token Tax and Context Cost | 6 Pillars of the Claude Code Summarized</title>
+<script data-notranslate="True" src="https://cdn.tailwindcss.com"></script>
+<script data-notranslate="True">tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-notranslate="True">
     body{font-family:'Inter',sans-serif}.dark body{background-color:#111827}
     .topic-explanation{display:none}.topic-explanation.active{display:block}
     html:not(.dark) body{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 50%,#f1f5f9 100%)}
@@ -19,745 +19,657 @@
   </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">6P Resumido</span>
-          </a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
-            <span class="sm:hidden">T1</span>
-            <span class="hidden sm:inline">Atalhos</span>
-          </a>
-          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
-            <span class="sm:hidden">T2</span>
-            <span class="hidden sm:inline">Starter Pack</span>
-          </a>
-          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
-            <span class="sm:hidden">T3</span>
-            <span class="hidden sm:inline">Workflows</span>
-          </a>
-          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors">
-            <span class="sm:hidden">T4</span>
-            <span class="hidden sm:inline">Prompts</span>
-          </a>
-          <a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors">
-            <span class="sm:hidden">T5</span>
-            <span class="hidden sm:inline">Skills</span>
-          </a>
-          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10">
-            <span class="sm:hidden">T6</span>
-            <span class="hidden sm:inline">MCPs</span>
-          </a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- BREADCRUMB -->
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../../index.html" class="hover:text-rose-400">Inicio</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-rose-400">Trilha 6</a>
-      <span>/</span>
-      <span class="text-rose-400">Modulo 6.1</span>
-    </div>
-  </nav>
-
-  <!-- HEADER -->
-  <header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">
-        MODULO 6.1
-      </span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">💰 Token Tax e Custo de Contexto</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">
-        Entenda o custo invisivel de cada MCP conectado: token tax, overhead por mensagem e como isso afeta a qualidade das respostas do Claude. Aprenda a monitorar e otimizar o consumo de contexto.
-      </p>
-
-      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-rose-400">6</div>
-          <div class="text-xs text-neutral-400">Topicos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-rose-400">12</div>
-          <div class="text-xs text-neutral-400">Minutos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-rose-400">Avancado</div>
-          <div class="text-xs text-neutral-400">Nivel</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-rose-400">Conceitual</div>
-          <div class="text-xs text-neutral-400">Tipo</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- CONTEUDO -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <!-- TOPICO 1 -->
-    <section id="topico-1" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">🏷️ O que e Token Tax</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Conceito Principal
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Token tax e o custo em tokens que cada MCP conectado adiciona a TODA interacao com o Claude, mesmo quando voce nao esta usando aquele MCP ativamente. Quando um MCP e conectado, seu schema completo (definicoes de tools, parametros, descricoes) e injetado automaticamente no contexto de cada mensagem enviada ao Claude.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>Cada MCP expoe tools com descricoes e parametros que sao serializados como tokens de entrada</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>Esses tokens sao enviados em TODA mensagem, nao apenas quando voce usa o MCP</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>5 MCPs conectados podem consumir 10.000+ tokens fixos por mensagem, antes de qualquer codigo ou instrucao</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Por Que Isso Importa
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>Token tax e invisivel - voce nao ve os schemas sendo enviados, mas eles consomem contexto</li>
-          <li>Operadores que ignoram token tax perdem 10-30% do contexto sem saber</li>
-          <li>A qualidade das respostas degrada proporcionalmente ao contexto consumido por overhead</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Faca um teste: rode /cost no inicio de uma sessao sem MCPs, envie 5 mensagens. Depois, adicione 3-4 MCPs e envie as mesmas 5 mensagens. Compare o consumo de tokens. A diferenca e o token tax real dos seus MCPs. Esse numero deve guiar suas decisoes de quais MCPs manter conectados.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Medir o token tax real dos seus MCPs com /cost</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Desconectar MCPs que nao esta usando ativamente</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Priorizar MCPs com baixo overhead (Filesystem) sobre alto (Browser)</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Conectar todos os MCPs 'por precaucao'</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Ignorar o impacto de token tax na qualidade</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Assumir que MCPs sao 'gratis' so porque a conexao e facil</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 2 -->
-    <section id="topico-2" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">📊 Tabela de Overhead por MCP</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Tabela de Token Tax
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Cada MCP tem um custo fixo diferente baseado no numero de tools que expoe e na complexidade dos schemas. Esta tabela mostra o overhead aproximado por mensagem para os MCPs mais comuns:
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Filesystem:</strong> ~500 tokens (LOW) - 3-4 tools simples, menor overhead do ecossistema</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Google Sheets:</strong> ~800 tokens (LOW-MODERATE) - 4-5 tools com parametros de range</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Database/Supabase:</strong> ~1.500 tokens (MODERATE) - 5-8 tools com schemas SQL</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>GitHub:</strong> ~2.000 tokens (MODERATE) - 10+ tools com muitos parametros</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>Browser/Chrome:</strong> ~5.000+ tokens (HIGH) - 10+ tools complexas com screenshots</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Impacto Cumulativo
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>Filesystem + GitHub + Browser = ~7.500 tokens fixos por mensagem</li>
-          <li>Em 50 mensagens, isso e 375.000 tokens extras - quase 2x a janela de contexto</li>
-          <li>Cada MCP removido economiza seu overhead multiplicado pelo numero de mensagens da sessao</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Cole esta tabela no seu CLAUDE.md como referencia rapida. Quando for decidir quais MCPs conectar, consulte os numeros e calcule o overhead total. Regra pratica: se o overhead total passa de 5.000 tokens, voce ja esta sacrificando qualidade perceptivelmente.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Memorizar os overheads aproximados</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Calcular overhead total antes de conectar MCPs</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Priorizar MCPs Low sobre MCPs High</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Conectar 4+ MCPs simultaneamente sem calcular</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Ignorar a diferenca entre 500 e 5000 tokens</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Tratar todos os MCPs como tendo o mesmo custo</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 3 -->
-    <section id="topico-3" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">🫁 Contexto como Oxigenio</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> A Metafora do Tanque de Oxigenio
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Imagine o contexto do Claude como um tanque de oxigenio dentro de um capacete de astronauta. O tanque tem 200.000 litros (tokens). Tudo o que o Claude precisa para 'pensar' - seu codigo, instrucoes, historico, CLAUDE.md - consome oxigenio desse tanque. MCPs sao equipamentos extras conectados ao mesmo tanque.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>Tanque cheio (200k tokens) = Claude pensa com clareza maxima, respostas detalhadas e precisas</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>Cada MCP e como um equipamento sugando oxigenio: Filesystem = tubinho fino, Browser = mangueira grossa</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>Quando o tanque esta 70%+ consumido, o Claude comeca a 'sufocar': respostas mais curtas, menos detalhadas, mais erros</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Por Que Esta Metafora Funciona
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>Torna tangivel algo abstrato - tokens viram oxigenio que voce consegue visualizar</li>
-          <li>Naturalmente gera cuidado - ninguem desperdicaria oxigenio com equipamento que nao esta usando</li>
-          <li>Cria urgencia correta - desconectar MCPs desnecessarios vira 'fechar a valvula' de equipamento ocioso</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Antes de cada sessao, pergunte: 'quanto oxigenio cada equipamento vai consumir?' Se a tarefa e puramente codigo, nao conecte Browser (mangueira grossa). Se e backend sem GitHub, nao conecte GitHub MCP. Cada litro de oxigenio economizado em overhead vai para qualidade de pensamento.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Visualizar o contexto como recurso finito e precioso</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Questionar cada MCP: 'preciso deste equipamento agora?'</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Desconectar MCPs = fechar valvulas de equipamentos ociosos</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Tratar contexto como infinito</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Manter MCPs 'por precaucao' como se fossem gratis</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Esperar degradacao de qualidade para agir</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 4 -->
-    <section id="topico-4" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">📏 Regra de Ouro: Max 2-3 MCPs</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> O Limite Pratico
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          Baseado no overhead medio dos MCPs populares, a regra de ouro e: mantenha no maximo 2-3 MCPs conectados simultaneamente. Com 2-3 MCPs, o overhead total fica entre 1.000-4.000 tokens - aceitavel para a maioria das tarefas. Com 4+, o overhead pode ultrapassar 8.000 tokens e degradacao se torna perceptivel.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>1 MCP (ideal):</strong> 500-2.000 tokens de overhead, impacto minimo na qualidade</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>2-3 MCPs (aceitavel):</strong> 1.500-5.000 tokens, balanco entre funcionalidade e qualidade</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>4-5 MCPs (excessivo):</strong> 5.000-10.000+ tokens, degradacao perceptivel em respostas complexas</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>6+ MCPs (desperdicador):</strong> 10.000++ tokens, qualidade seriamente comprometida</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Por Que 2-3 e o Sweet Spot
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>Cobre 95% dos workflows: Filesystem (sempre) + 1-2 MCPs especificos para a tarefa</li>
-          <li>Overhead maximo de ~5.000 tokens = apenas 2.5% do contexto de 200k</li>
-          <li>Permite rotacao rapida: remover 1 e adicionar outro leva segundos</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Trate a regra de 2-3 MCPs como um limite rigido, nao como sugestao. Se voce precisa de 4 MCPs para uma tarefa, divida a tarefa em fases e rotacione: fase 1 com MCPs A+B, fase 2 com MCPs C+D. Nunca conecte tudo ao mesmo tempo 'por conveniencia'.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Respeitar o limite de 2-3 MCPs simultaneos</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Rotacionar MCPs por fase de trabalho</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Manter Filesystem como o '1 MCP fixo' e rotacionar os outros</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Conectar 4+ MCPs simultaneamente</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Justificar excesso com 'mas eu preciso de todos'</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Sacrificar qualidade por conveniencia</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 5 -->
-    <section id="topico-5" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">📈 Monitoramento com /cost</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> Medindo o Impacto Real
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          O comando /cost e sua ferramenta principal para monitorar token tax na pratica. Ele mostra tokens consumidos por mensagem, custo acumulado da sessao e percentual de contexto usado. Use antes e depois de conectar MCPs para ver o impacto direto.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>Rode <code class='bg-dark-700 px-2 py-1 rounded text-rose-400'>/cost</code> no inicio da sessao para baseline</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>Apos conectar MCPs, rode novamente e compare os tokens por mensagem</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span>A diferenca entre as duas medicoes e o token tax real dos MCPs conectados</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Monitoramento e Poder
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>Sem medicao, token tax e teoria. Com /cost, e numero concreto que voce otimiza</li>
-          <li>Permite decisoes data-driven: 'Browser MCP custa 5k tokens mas salvou 30 min de QA manual'</li>
-          <li>Cria feedback loop: conecta -> mede -> otimiza -> mede novamente</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Crie o habito de rodar /cost a cada 15-20 mensagens quando usando MCPs. Se o contexto esta acima de 60% E voce tem MCPs conectados, avalie se pode desconectar algum antes de rodar /compact. Desconectar um MCP de 2.000 tokens antes de compactar e como liberar espaco no tanque de oxigenio.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Rodar /cost regularmente com MCPs ativos</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Comparar sessoes com e sem MCPs</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Usar dados de /cost para justificar decisoes de MCP</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Ignorar /cost quando usando MCPs</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Assumir que MCPs nao afetam o consumo</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Esperar problemas para comecar a monitorar</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- TOPICO 6 -->
-    <section id="topico-6" class="mb-16">
-      <div class="flex items-center space-x-4 mb-6">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">🎯 Impacto na Qualidade das Respostas</h2>
-      </div>
-
-      <!-- Conceito Principal -->
-      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
-          <span class="mr-2">🎯</span> A Curva de Degradacao
-        </h3>
-        <p class="text-neutral-300 mb-4">
-          A qualidade das respostas do Claude segue uma curva previsivel baseada no uso de contexto. Com MCPs conectados, voce entra mais rapido nas faixas de degradacao porque o overhead fixo consome contexto desde o inicio.
-        </p>
-        <ul class="space-y-2 text-neutral-300">
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>0-50% contexto:</strong> Respostas excelentes - detalhadas, precisas, com exemplos. Claude no maximo potencial</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>50-70% contexto:</strong> Respostas boas - ainda precisas mas menos detalhadas. Comece a considerar /compact</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>70-90% contexto:</strong> Degradacao visivel - respostas mais curtas, menos exemplos, possiveis omissoes</span>
-          </li>
-          <li class="flex items-start space-x-2">
-            <span class="text-rose-400 mt-1">•</span>
-            <span><strong class='text-white'>90%+ contexto:</strong> Degradacao severa - erros frequentes, respostas truncadas, contexto perdido entre mensagens</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Por Que Importa -->
-      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> MCPs Aceleram a Curva
-        </h3>
-        <ul class="space-y-2 text-neutral-300">
-          <li>Sem MCPs: voce chega a 50% do contexto apos ~40-60 mensagens</li>
-          <li>Com 3 MCPs (~5k overhead): voce chega a 50% apos ~30-40 mensagens</li>
-          <li>Com 5+ MCPs (~10k+ overhead): voce chega a 50% apos ~20-30 mensagens - quase metade do normal</li>
-        </ul>
-      </div>
-
-      <!-- Dica Pratica -->
-      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pratica
-        </h3>
-        <p class="text-neutral-300">
-          Quando perceber que as respostas do Claude estao ficando mais curtas ou menos precisas, rode /cost imediatamente. Se o contexto esta acima de 70%, a causa provavel e contexto saturado - nao 'o modelo ficou burro'. A solucao: /compact + remover MCPs desnecessarios. Voce ficara surpreso com a melhoria.
-        </p>
-      </div>
-
-      <!-- Fazer vs Evitar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Correlacionar qualidade de resposta com uso de contexto</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Usar /cost quando respostas parecerem degradadas</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-emerald-400">✓</span>
-              <span>Compactar E remover MCPs quando contexto > 70%</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
-          <ul class="space-y-3 text-neutral-300">
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Culpar o modelo quando a qualidade cai (geralmente e contexto)</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Ignorar os sinais de degradacao</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-red-400">✗</span>
-              <span>Continuar pedindo tarefas complexas com contexto > 80%</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESUMO FINAL -->
-    <section class="mb-12">
-      <div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
-        <h2 class="text-2xl font-bold mb-6 flex items-center">
-          <span class="mr-3">📋</span> Resumo do Modulo
-        </h2>
-
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">O que e Token Tax</strong>
-              <span class="text-neutral-400"> - Token tax e o custo em tokens que cada MCP conectado adiciona a TODA interacao c...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Tabela de Overhead por MCP</strong>
-              <span class="text-neutral-400"> - Cada MCP tem um custo fixo diferente baseado no numero de tools que expoe e na c...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Contexto como Oxigenio</strong>
-              <span class="text-neutral-400"> - Imagine o contexto do Claude como um tanque de oxigenio dentro de um capacete de...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Regra de Ouro: Max 2-3 MCPs</strong>
-              <span class="text-neutral-400"> - Baseado no overhead medio dos MCPs populares, a regra de ouro e: mantenha no max...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Monitoramento com /cost</strong>
-              <span class="text-neutral-400"> - O comando /cost e sua ferramenta principal para monitorar token tax na pratica. ...</span>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3">
-            <span class="text-rose-400 mt-1">✓</span>
-            <div>
-              <strong class="text-white">Impacto na Qualidade das Respostas</strong>
-              <span class="text-neutral-400"> - A qualidade das respostas do Claude segue uma curva previsivel baseada no uso de...</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-          <h3 class="font-semibold text-rose-400 mb-2">Proximo:</h3>
-          <p class="text-neutral-300">6.2 - Framework de Decisao: Skill vs MCP</p>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-            ← Voltar para Trilha
-          </a>
-          <a href="modulo-6-2.html" class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors">
-            Proximo Modulo →
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>6 Pilares do Claude Code Resumido - 2026 | <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
+NAVIGATION
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">6P Summary</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://duclub" target="_blank">duclub</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">
+<span class="sm:hidden">T1</span>
+<span class="hidden sm:inline">Shortcuts</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">
+<span class="sm:hidden">T2</span>
+<span class="hidden sm:inline">Starter Pack</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">T3</span>
+<span class="hidden sm:inline">Workflows</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">
+<span class="sm:hidden">T4</span>
+<span class="hidden sm:inline">Prompts</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">
+<span class="sm:hidden">T5</span>
+<span class="hidden sm:inline">Skills</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html">
+<span class="sm:hidden">T6</span>
+<span class="hidden sm:inline">MCPs</span>
+</a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20">
+<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+BREADCRUMB
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-rose-400" href="index.html">Track 6</a>
+<span>/</span>
+<span class="text-rose-400">Module 6.1</span>
+</div>
+</nav>
+HEADER
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MODULE 6.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">💰 Token Tax and Context Cost</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Understand the invisible cost of each connected MCP: token tax, overhead per message and how this affects the quality of Claude's responses. Learn how to monitor and optimize context consumption.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">12</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Advanced</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Conceptual</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+CONTENT
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+TOPIC 1
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🏷️ What is Token Tax</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Main Concept</h3>
+<p class="text-neutral-300 mb-4">Token tax is the cost in tokens that each connected MCP adds to EVERY interaction with Claude, even when you are not actively using that MCP. When an MCP is connected, its complete schema (tool definitions, parameters, descriptions) is automatically injected into the context of each message sent to Claude.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>Each MCP exposes tools with descriptions and parameters that are serialized as input tokens</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>These tokens are sent in EVERY message, not just when you use MCP</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>5 connected MCPs can consume 10,000+ fixed tokens per message, before any code or instructions</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Why This Matters</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Token tax is invisible - you don't see the schemas being sent, but they consume context</li>
+<li>Operators who ignore token tax unknowingly miss 10-30% of context</li>
+<li>The quality of responses degrades proportionally to the context consumed by overhead</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Do a test: run /cost at the beginning of a session without MCPs, send 5 messages. Then add 3-4 MCPs and send the same 5 messages. Compare token consumption. The difference is the actual token tax of your MCPs. This number should guide your decisions on which MCPs to keep connected.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Measure the real token tax of your MCPs with /cost</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Disconnect MCPs you are not actively using</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Prioritize MCPs with low overhead (Filesystem) over high (Browser)</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Connect all MCPs 'just in case'</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Ignoring the impact of token tax on quality</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Assuming that MCPs are 'free' just because the connection is easy</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 2
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📊 Overhead Table by MCP</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Token Tax Table</h3>
+<p class="text-neutral-300 mb-4">Each MCP has a different fixed cost based on the number of tools it exposes and the complexity of the schemas. This table shows the approximate overhead per message for the most common MCPs:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Filesystem:</strong>~500 tokens (LOW) - 3-4 simple tools, lower ecosystem overhead</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Google Sheets:</strong>~800 tokens (LOW-MODERATE) - 4-5 tools with range parameters</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Database/Supabase:</strong>~1,500 tokens (MODERATE) - 5-8 tools with SQL schemas</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">GitHub:</strong>~2,000 tokens (MODERATE) - 10+ tools with many parameters</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">Browser/Chrome:</strong>~5,000+ tokens (HIGH) - 10+ complex tools with screenshots</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Cumulative Impact</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Filesystem + GitHub + Browser = ~7,500 sticky tokens per message</li>
+<li>In 50 messages, that and 375,000 extra tokens - almost 2x the context window</li>
+<li>Each MCP removed saves your overhead multiplied by the number of messages in the session</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Paste this table into your CLAUDE.md as a quick reference. When deciding which MCPs to connect, look at the numbers and calculate the total overhead. Rule of thumb: if the total overhead exceeds 5,000 tokens, you are already noticeably sacrificing quality.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Memorize approximate overheads</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Calculate total overhead before connecting MCPs</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Prioritize Low MCPs over High MCPs</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Connect 4+ MCPs simultaneously without calculating</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Ignore the difference between 500 and 5000 tokens</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Treat all MCPs as having the same cost</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 3
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🫁 Context as Oxygen</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>The Oxygen Tank Metaphor</h3>
+<p class="text-neutral-300 mb-4">Imagine Claude's context as an oxygen tank inside an astronaut helmet. The tank has 200,000 liters (tokens). Everything Claude needs to 'think' - his code, instructions, history, CLAUDE.md - consumes oxygen from this tank. MCPs are extra equipment connected to the same tank.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>Full tank (200k tokens) = Claude thinks with maximum clarity, detailed and precise answers</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>Each MCP is like a piece of equipment sucking oxygen: Filesystem = thin tube, Browser = thick hose</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>When the tank is 70%+ consumed, Claude starts to 'choke': shorter answers, less detailed, more errors</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Why This Metaphor Works</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Make something abstract tangible - tokens become oxygen that you can visualize</li>
+<li>Naturally generates caution - no one would waste oxygen on equipment they are not using</li>
+<li>Creates correct urgency - disconnecting unnecessary MCPs becomes 'closing the valve' of idle equipment</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Before each session, ask: 'how much oxygen will each piece of equipment consume?' If the task is purely code, do not connect Browser (thick hose). If it is a backend without GitHub, do not connect GitHub MCP. Every liter of oxygen saved in overhead goes towards quality of thought.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>View context as a finite and precious resource</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Question each MCP: 'do I need this equipment now?'</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Disconnect MCPs = close valves on idle equipment</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Treat context as infinite</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Keep MCPs 'just in case' as if they were free</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Wait for quality degradation to act</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 4
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📏 Rule of Thumb: Max 2-3 MCPs</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>The practical limit</h3>
+<p class="text-neutral-300 mb-4">Based on the average overhead of popular MCPs, the rule of thumb is: keep a maximum of 2-3 MCPs connected simultaneously. With 2-3 MCPs, the total overhead is between 1000-4000 tokens - acceptable for most tasks. With 4+, the overhead can exceed 8,000 tokens and degradation becomes noticeable.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">1 MCP (ideal):</strong>500-2000 tokens overhead, minimal impact on quality</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">2-3 MCPs (acceptable):</strong>1,500-5,000 tokens, balance between functionality and quality</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">4-5 MCPs (excessive):</strong>5,000-10,000+ tokens, noticeable degradation in complex responses</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">6+ MCPs (wasteful):</strong>10,000++ tokens, seriously compromised quality</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Why 2-3 and the Sweet Spot</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Covers 95% of workflows: Filesystem (always) + 1-2 MCPs specific to the task</li>
+<li>Maximum overhead of ~5,000 tokens = just 2.5% of the 200k context</li>
+<li>Allows quick rotation: removing 1 and adding another takes seconds</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Treat the 2-3 MCP rule as a hard limit, not a suggestion. If you need 4 MCPs for a task, divide the task into phases and rotate: phase 1 with MCPs A+B, phase 2 with MCPs C+D. Never connect everything at the same time 'for convenience'.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Respect the limit of 2-3 simultaneous MCPs</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Rotate MCPs by work phase</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Keep Filesystem as '1 fixed MCP' and rotate the others</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Connect 4+ MCPs simultaneously</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Justifying excess with 'but I need everyone'</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Sacrificing quality for convenience</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 5
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📈 Monitoring with /cost</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>Measuring Real Impact</h3>
+<p class="text-neutral-300 mb-4">The /cost command is your main tool for monitoring token tax in practice. It shows tokens consumed per message, accumulated session cost and percentage of context used. Use before and after connecting MCPs to see the direct impact.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>Rotate<code class="bg-dark-700 px-2 py-1 rounded text-rose-400" data-notranslate="True">/cost</code>at the beginning of the session for baseline</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>After connecting MCPs, run again and compare the tokens per message</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span>The difference between the two measurements is the actual token tax of the connected MCPs</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>Monitoring and Power</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Without medication, token tax and theory. With /cost, it is a concrete number that you optimize</li>
+<li>Enables data-driven decisions: 'MCP browser costs 5k tokens but saved 30 minutes of manual QA'</li>
+<li>Creates feedback loop: connect -&gt; measure -&gt; optimize -&gt; measure again</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">Make a habit of running /cost every 15-20 messages when using MCPs. If the context is above 60% AND you have MCPs connected, consider whether you can disconnect any before running /compact. Disconnecting a 2000 token MCP before compacting is how to free up space in the oxygen tank.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Run /cost regularly with active MCPs</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Compare sessions with and without MCPs</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Using /cost data to justify MCP decisions</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Ignore /cost when using MCPs</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Assume that MCPs do not affect consumption</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Expect problems to start monitoring</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+TOPIC 6
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🎯 Impact on Response Quality</h2>
+</div>
+Main Concept
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center">
+<span class="mr-2">🎯</span>The Degradation Curve</h3>
+<p class="text-neutral-300 mb-4">The quality of Claude's responses follows a predictable curve based on the use of context. With connected MCPs, you get into degradation lanes faster because the fixed overhead consumes context from the beginning.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">0-50% context:</strong>Excellent answers - detailed, precise, with examples. Claude at full potential</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">50-70% context:</strong>Good answers - still accurate but less detailed. Start considering /compact</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">70-90% context:</strong>Visible degradation - shorter answers, fewer examples, possible omissions</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-rose-400 mt-1">•</span>
+<span><strong class="text-white">90%+ context:</strong>Severe degradation - frequent errors, garbled responses, lost context between messages</span>
+</li>
+</ul>
+</div>
+Why It Matters
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
+<span class="mr-2">📊</span>MCPs Accelerate the Curve</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Without MCPs: you reach 50% of the context after ~40-60 messages</li>
+<li>With 3 MCPs (~5k overhead): you reach 50% after ~30-40 messages</li>
+<li>With 5+ MCPs (~10k+ overhead): you reach 50% after ~20-30 messages - almost half of normal</li>
+</ul>
+</div>
+Practical Tip
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+<span class="mr-2">💡</span>Practical Tip</h3>
+<p class="text-neutral-300">When you notice that Claude's answers are becoming shorter or less precise, run /cost immediately. If the context is above 70%, the likely cause is saturated context - not 'the model went dumb'. The solution: /compact + remove unnecessary MCPs. You will be surprised by the improvement.</p>
+</div>
+Do vs Avoid
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What TO DO</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Correlate response quality with use of context</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Use /cost when responses appear degraded</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-emerald-400">✓</span>
+<span>Compact and remove MCPs when context &gt; 70%</span>
+</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What NOT to do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Blaming the model when quality drops (generally and context)</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Ignore signs of degradation</span>
+</li>
+<li class="flex items-start space-x-2">
+<span class="text-red-400">✗</span>
+<span>Keep asking for complex tasks with context &gt; 80%</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+FINAL SUMMARY
+<section class="mb-12">
+<div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center">
+<span class="mr-3">📋</span>Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">What is Token Tax</strong>
+<span class="text-neutral-400">- Token tax is the cost in tokens that each connected MCP adds to EVERY interaction with...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Overhead Table by MCP</strong>
+<span class="text-neutral-400">- Each MCP has a different fixed cost based on the number of tools it exposes and the c...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Context as Oxygen</strong>
+<span class="text-neutral-400">- Imagine Claude's context as an oxygen tank inside a helmet...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Rule of Thumb: Max 2-3 MCPs</strong>
+<span class="text-neutral-400">- Based on the average overhead of popular MCPs, the rule of thumb is: keep to max...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Monitoring with /cost</strong>
+<span class="text-neutral-400">- The /cost command is your main tool for monitoring token tax in practice. ...</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<span class="text-rose-400 mt-1">✓</span>
+<div>
+<strong class="text-white">Impact on the Quality of Responses</strong>
+<span class="text-neutral-400">- The quality of Claude's answers follows a predictable curve based on the use of...</span>
+</div>
+</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-rose-400 mb-2">Next:</h3>
+<p class="text-neutral-300">6.2 - Decision Framework: Skill vs MCP</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Trail</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-6-2.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+FOOTER
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>6 Pillars of the Claude Code Summarized - 2026 |<a class="text-sky-400 hover:text-sky-300" href="https://duclub" target="_blank">duclub</a></p>
+</div>
+</footer>
+SCRIPTS
+<script data-notranslate="True">
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
